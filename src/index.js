@@ -5,12 +5,11 @@ import { getInput, addDivs } from "./createDOM";
 const TodoList = [
   {
     title: "first to-do",
-    description: "trying out",
     dueDate: "sometime",
     priority: "chill",
   },
 ];
-
+//container Div
 const container = () => {
   return document.querySelector(".container");
 };

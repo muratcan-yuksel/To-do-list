@@ -14,22 +14,15 @@ const getInput = (() => {
   const getTitle = () => {
     return document.getElementById("title").value;
   };
-  const getDescription = () => {
-    return document.getElementById("description").value;
-  };
 
-  return { getTitle, getDescription };
+  return { getTitle };
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
   const title = document.createElement("DIV");
-  const description = document.createElement("DIV");
 
   title.textContent = getInput.getTitle();
   container().appendChild(title);
-
-  description.textContent = getInput.getDescription();
-  container().appendChild(description);
 };
 
 export { getInput, addDivs };
