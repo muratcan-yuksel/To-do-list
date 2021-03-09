@@ -6,3 +6,5 @@ class Todo {
     this.priority = priority;
   }
 }
+
+export { Todo };
