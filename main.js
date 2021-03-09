@@ -16,7 +16,7 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Todo\": () => (/* binding */ Todo)\n/* harmony export */ });\nclass Todo {\n  constructor(title, description, dueDate, priority, comments) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n    this.comments = comments;\n  }\n}\n\nconst getInput = () => {\n  const getTitle = document.getElementById(\"title\");\n  const getDescription = document.getElementById(\"description\");\n  const getDueDate = document.getElementById(\"dueDate\");\n  const getPriority = document.getElementById(\"priority\");\n  const getComments = document.getElementById(\"comments\");\n};\n\n\n\n\n//# sourceURL=webpack://To-do-list/./src/createTodo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Todo\": () => (/* binding */ Todo)\n/* harmony export */ });\nclass Todo {\n  constructor(title, description, dueDate, priority, comments) {\n    this.title = title;\n    this.description = description;\n    this.dueDate = dueDate;\n    this.priority = priority;\n    this.comments = comments;\n  }\n}\n\n\n\n\n//# sourceURL=webpack://To-do-list/./src/createTodo.js?");
 
 /***/ }),
 
