@@ -9,18 +9,23 @@ class Todo {
     this.comments = comments;
   }
 }
-//Creates a new todo upon fucntion calling
+//Creates a new todo upon function calling
 const newTodo = (() => {
   //create new todo
   const createTodo = () => {
     const todo = new Todo();
-    //gets the values from createDOM.js
-    todo.title = getInput.getTitle();
-    todo.description = getInput.getDescription();
     console.log(todo);
     return;
   };
-  return { createTodo };
+  const getTitle = () => {
+    //gets the title from createDOM.js and appends it into the tod object
+    return getInput.getTitle();
+  };
+  //gets the description from createDOM.js and appends it into the tod object
+  const getDescription = () => {
+    return getInput.getDescription();
+  };
+  return { createTodo, getTitle, getDescription };
 })();
 
 export { Todo, newTodo };

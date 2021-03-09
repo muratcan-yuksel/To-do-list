@@ -1,5 +1,5 @@
 import { Todo, newTodo } from "./createTodo";
-import { getInput } from "./createDOM";
+import { getInput, addDivs } from "./createDOM";
 
 //an array that holds the to-dos
 const TodoList = [
@@ -32,11 +32,11 @@ button.addEventListener("click", function () {
 
   // const title = document.createElement("DIV");
   // const description = document.createElement("DIV");
-  // const comments = document.createElement("DIV");
-  // title.textContent = todo.title;
+
+  // title.textContent = newTodo.getTitle();
   // container.appendChild(title);
-  // description.textContent = todo.description;
+  // description.textContent = newTodo.getDescription();
   // container.appendChild(description);
-  // comments.textContent = todo.comments;
-  // container.appendChild(comments);
+
+  addDivs();
 });

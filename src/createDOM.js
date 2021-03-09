@@ -1,4 +1,4 @@
-import { Todo } from "./createTodo";
+import { Todo, newTodo } from "./createTodo";
 
 const createDOM = (() => {
   //get the container Div
@@ -8,7 +8,7 @@ const createDOM = (() => {
   title.setAttribute("class", "title");
 })();
 
-//Gets the user input (value) and exports it 
+//Gets the user input (value) and exports it
 const getInput = (() => {
   const getTitle = () => {
     return document.getElementById("title").value;
@@ -20,4 +20,14 @@ const getInput = (() => {
   return { getTitle, getDescription };
 })();
 
-export { getInput };
+const addDivs = () => {
+  const title = document.createElement("DIV");
+  const description = document.createElement("DIV");
+
+  title.textContent = newTodo.getTitle();
+  container.appendChild(title);
+  description.textContent = newTodo.getDescription();
+  container.appendChild(description);
+};
+
+export { getInput, addDivs };
