@@ -8,12 +8,4 @@ class Todo {
   }
 }
 
-const getInput = () => {
-  const getTitle = document.getElementById("title");
-  const getDescription = document.getElementById("description");
-  const getDueDate = document.getElementById("dueDate");
-  const getPriority = document.getElementById("priority");
-  const getComments = document.getElementById("comments");
-};
-
 export { Todo };
