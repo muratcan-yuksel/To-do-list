@@ -11,6 +11,28 @@ const TodoList = [
 ];
 
 const container = document.querySelector(".container");
-const todo = new Todo("Todo list", "trying out", "sometime", "chill");
-console.log(todo);
-container.textContent = todo.title + " " + todo.description;
+// const todo = new Todo();
+// console.log(todo);
+// container.textContent = todo.title + " " + todo.description;
+
+//this is the core concept that I want to implement
+const button = document.querySelector(".button");
+button.addEventListener("click", function () {
+  const getTitle = document.getElementById("title").value;
+  const getDescription = document.getElementById("description").value;
+  const getComments = document.getElementById("comments").value;
+  const todo = new Todo();
+  todo.title = getTitle;
+  todo.description = getDescription;
+  todo.comments = getComments;
+  console.log(todo);
+  const title = document.createElement("DIV");
+  const description = document.createElement("DIV");
+  const comments = document.createElement("DIV");
+  title.textContent = todo.title;
+  container.appendChild(title);
+  description.textContent = todo.description;
+  container.appendChild(description);
+  comments.textContent = todo.comments;
+  container.appendChild(comments);
+});
