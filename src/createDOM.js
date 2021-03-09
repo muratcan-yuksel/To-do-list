@@ -25,9 +25,9 @@ const addDivs = () => {
   const title = document.createElement("DIV");
   const description = document.createElement("DIV");
 
-  title.textContent = newTodo.getTitle();
+  title.textContent = getInput.getTitle();
   container().appendChild(title);
-  description.textContent = newTodo.getDescription();
+  description.textContent = getInput.getDescription();
   container().appendChild(description);
 };
 

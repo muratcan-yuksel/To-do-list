@@ -14,18 +14,13 @@ const newTodo = (() => {
   //create new todo
   const createTodo = () => {
     const todo = new Todo();
+    todo.title = getInput.getTitle();
+    todo.description = getInput.getDescription();
     console.log(todo);
     return;
   };
-  const getTitle = () => {
-    //gets the title from createDOM.js and appends it into the tod object
-    return getInput.getTitle();
-  };
-  //gets the description from createDOM.js and appends it into the tod object
-  const getDescription = () => {
-    return getInput.getDescription();
-  };
-  return { createTodo, getTitle, getDescription };
+
+  return { createTodo };
 })();
 
 export { Todo, newTodo };
