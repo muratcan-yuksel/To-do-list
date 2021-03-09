@@ -22,7 +22,7 @@ body {
   /*position: relative;*/
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   background-color: #fefefe;
   margin: auto;
   padding: 0;
@@ -86,6 +86,8 @@ body {
 }
 
 .modal-footer {
+  grid-row: 6;
+  grid-column: 1/5;
   padding: 2px 16px;
   background-color: rgb(70, 70, 218);
   color: white;
