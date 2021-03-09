@@ -10,10 +10,10 @@ const createDOM = (() => {
 
 const getInput = (() => {
   const getTitle = () => {
-    document.getElementById("title").value;
+    return document.getElementById("title").value;
   };
   const getDescription = () => {
-    document.getElementById("description").value;
+    return document.getElementById("description").value;
   };
 
   return { getTitle, getDescription };
