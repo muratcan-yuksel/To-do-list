@@ -23,4 +23,4 @@ button.addEventListener("click", function () {
   addDivs();
 });
 
-export { container };
+export { container, TodoList };

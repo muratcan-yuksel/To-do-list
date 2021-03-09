@@ -20,13 +20,14 @@ const getInput = (() => {
 
   return { getTitle, getDescription };
 })();
-
+//creates Divs and writes the user input into the DOM
 const addDivs = () => {
   const title = document.createElement("DIV");
   const description = document.createElement("DIV");
 
   title.textContent = getInput.getTitle();
   container().appendChild(title);
+
   description.textContent = getInput.getDescription();
   container().appendChild(description);
 };
