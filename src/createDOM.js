@@ -1,4 +1,5 @@
 import { Todo, newTodo } from "./createTodo";
+import { container } from "./index";
 
 const createDOM = (() => {
   //get the container Div
@@ -25,9 +26,9 @@ const addDivs = () => {
   const description = document.createElement("DIV");
 
   title.textContent = newTodo.getTitle();
-  container.appendChild(title);
+  container().appendChild(title);
   description.textContent = newTodo.getDescription();
-  container.appendChild(description);
+  container().appendChild(description);
 };
 
 export { getInput, addDivs };

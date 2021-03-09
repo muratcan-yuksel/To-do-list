@@ -11,7 +11,9 @@ const TodoList = [
   },
 ];
 
-const container = document.querySelector(".container");
+const container = () => {
+  return document.querySelector(".container");
+};
 // const todo = new Todo();
 // console.log(todo);
 // container.textContent = todo.title + " " + todo.description;
@@ -40,3 +42,5 @@ button.addEventListener("click", function () {
 
   addDivs();
 });
+
+export { container };
