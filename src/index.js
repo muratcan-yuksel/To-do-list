@@ -7,7 +7,7 @@ const TodoList = [
     title: "first to-do",
     dueDate: "sometime",
     priority: "chill",
-    comments: "It's about something",
+    details: "It's about something",
   },
 ];
 //container Div
