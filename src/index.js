@@ -1,4 +1,4 @@
-import { Todo } from "./createTodo";
+import { Todo, newTodo } from "./createTodo";
 import { getInput } from "./createDOM";
 
 //an array that holds the to-dos
@@ -23,18 +23,20 @@ button.addEventListener("click", function () {
   // const getDescription = document.getElementById("description").value;
 
   //const getComments = document.getElementById("comments").value;
-  const todo = new Todo();
-  todo.title = getInput.getTitle();
-  todo.description = getInput.getDescription();
-  //todo.comments = getComments;
-  console.log(todo);
-  const title = document.createElement("DIV");
-  const description = document.createElement("DIV");
-  const comments = document.createElement("DIV");
-  title.textContent = todo.title;
-  container.appendChild(title);
-  description.textContent = todo.description;
-  container.appendChild(description);
+  //const todo = new Todo();
+  newTodo.createTodo();
+  // todo.title = getInput.getTitle();
+  // todo.description = getInput.getDescription();
+
+  // console.log(todo);
+
+  // const title = document.createElement("DIV");
+  // const description = document.createElement("DIV");
+  // const comments = document.createElement("DIV");
+  // title.textContent = todo.title;
+  // container.appendChild(title);
+  // description.textContent = todo.description;
+  // container.appendChild(description);
   // comments.textContent = todo.comments;
   // container.appendChild(comments);
 });

@@ -8,6 +8,7 @@ const createDOM = (() => {
   title.setAttribute("class", "title");
 })();
 
+//Gets the user input (value) and exports it 
 const getInput = (() => {
   const getTitle = () => {
     return document.getElementById("title").value;
