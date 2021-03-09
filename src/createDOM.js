@@ -7,3 +7,16 @@ const createDOM = (() => {
   const title = document.createElement("DIV");
   title.setAttribute("class", "title");
 })();
+
+const getInput = (() => {
+  const getTitle = () => {
+    document.getElementById("title").value;
+  };
+  const getDescription = () => {
+    document.getElementById("description").value;
+  };
+
+  return { getTitle, getDescription };
+})();
+
+export { getInput };

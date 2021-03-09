@@ -1,4 +1,5 @@
 import { Todo } from "./createTodo";
+import { getInput } from "./createDOM";
 
 //an array that holds the to-dos
 const TodoList = [
@@ -18,13 +19,14 @@ const container = document.querySelector(".container");
 //this is the core concept that I want to implement
 const button = document.querySelector(".button");
 button.addEventListener("click", function () {
-  const getTitle = document.getElementById("title").value;
-  const getDescription = document.getElementById("description").value;
-  const getComments = document.getElementById("comments").value;
+  // const getTitle = document.getElementById("title").value;
+  // const getDescription = document.getElementById("description").value;
+
+  //const getComments = document.getElementById("comments").value;
   const todo = new Todo();
-  todo.title = getTitle;
-  todo.description = getDescription;
-  todo.comments = getComments;
+  todo.title = getInput.getTitle();
+  todo.description = getInput.getDescription();
+  //todo.comments = getComments;
   console.log(todo);
   const title = document.createElement("DIV");
   const description = document.createElement("DIV");
@@ -33,6 +35,6 @@ button.addEventListener("click", function () {
   container.appendChild(title);
   description.textContent = todo.description;
   container.appendChild(description);
-  comments.textContent = todo.comments;
-  container.appendChild(comments);
+  // comments.textContent = todo.comments;
+  // container.appendChild(comments);
 });
