@@ -22,13 +22,14 @@ const getInput = (() => {
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
+  //Create elements
   const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
   const date = document.createElement("DIV");
   const priority = document.createElement("DIV");
   const deleteButton = document.createElement("BUTTON");
-
+  // set their attributes for identification and append them to the container Div
   checkBox.setAttribute("type", "checkbox");
   checkBox.setAttribute("class", "todoCheck");
   container().appendChild(checkBox);
