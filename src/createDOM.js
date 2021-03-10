@@ -21,7 +21,7 @@ const getInput = (() => {
 const addDivs = () => {
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
-  const date1 = document.createElement("DIV");
+  const date = document.createElement("DIV");
 
   title.textContent = getInput.getTitle();
   container().appendChild(title);
@@ -29,9 +29,8 @@ const addDivs = () => {
   details.textContent = getInput.getDetails();
   container().appendChild(details);
 
-  date1.textContent = "dateoy";
-  //getInput.getDate();
-  container().appendChild(date1);
+  date.innerHTML = getInput.getDate();
+  container().appendChild(date);
 };
 
 export { getInput, addDivs };
