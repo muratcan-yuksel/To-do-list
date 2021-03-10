@@ -28,15 +28,19 @@ const addDivs = () => {
   const priority = document.createElement("DIV");
 
   title.textContent = getInput.getTitle();
+  title.setAttribute("class", "todoTitle");
   container().appendChild(title);
 
   details.textContent = getInput.getDetails();
+  details.setAttribute("class", "todoDetails");
   container().appendChild(details);
 
   date.innerHTML = getInput.getDate();
+  date.setAttribute("class", "todoDate");
   container().appendChild(date);
 
   priority.innerHTML = getInput.getPriority();
+  priority.setAttribute("class", "todoPriority");
   container().appendChild(priority);
 };
 
