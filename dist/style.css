@@ -92,3 +92,8 @@ body {
   background-color: rgb(70, 70, 218);
   color: white;
 }
+#modalSideBar {
+  background-color: rgb(48, 58, 48);
+  grid-row: 2/6;
+  grid-column: 1;
+}
