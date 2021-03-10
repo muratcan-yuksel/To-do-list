@@ -23,7 +23,9 @@ const getInput = (() => {
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
   //create a todo container
+  //the reason to do this is to be able to delete a singular to do element
   const todoContainer = document.createElement("DIV");
+  //give it a classname
   todoContainer.setAttribute("class", "todoContainer");
   //append it to the container from index.js
   container().appendChild(todoContainer);
@@ -34,7 +36,7 @@ const addDivs = () => {
   const date = document.createElement("DIV");
   const priority = document.createElement("DIV");
   const deleteButton = document.createElement("BUTTON");
-  // set their attributes for identification and append them to the container Div
+  // set their attributes for identification and append them to the todo container Div
   checkBox.setAttribute("type", "checkbox");
   checkBox.setAttribute("class", "todoCheck");
   todoContainer.appendChild(checkBox);
@@ -58,6 +60,8 @@ const addDivs = () => {
   deleteButton.textContent = "DELETE";
   deleteButton.setAttribute("class", "todoDelete");
   todoContainer.appendChild(deleteButton);
+  //the answer is todoContainer
+  console.log(deleteButton.parentNode);
 };
 
 export { getInput, addDivs };
