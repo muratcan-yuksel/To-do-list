@@ -97,3 +97,7 @@ body {
   grid-row: 2/6;
   grid-column: 1;
 }
+#title {
+  width: 90%;
+  background-color: brown;
+}
