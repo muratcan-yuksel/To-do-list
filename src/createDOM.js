@@ -22,6 +22,11 @@ const getInput = (() => {
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
+  //create a todo container
+  const todoContainer = document.createElement("DIV");
+  todoContainer.setAttribute("class", "todoContainer");
+  //append it to the container from index.js
+  container().appendChild(todoContainer);
   //Create elements
   const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
@@ -32,27 +37,27 @@ const addDivs = () => {
   // set their attributes for identification and append them to the container Div
   checkBox.setAttribute("type", "checkbox");
   checkBox.setAttribute("class", "todoCheck");
-  container().appendChild(checkBox);
+  todoContainer.appendChild(checkBox);
 
   title.textContent = getInput.getTitle();
   title.setAttribute("class", "todoTitle");
-  container().appendChild(title);
+  todoContainer.appendChild(title);
 
   details.textContent = getInput.getDetails();
   details.setAttribute("class", "todoDetails");
-  container().appendChild(details);
+  todoContainer.appendChild(details);
 
   date.innerHTML = getInput.getDate();
   date.setAttribute("class", "todoDate");
-  container().appendChild(date);
+  todoContainer.appendChild(date);
 
   priority.innerHTML = getInput.getPriority();
   priority.setAttribute("class", "todoPriority");
-  container().appendChild(priority);
+  todoContainer.appendChild(priority);
 
   deleteButton.textContent = "DELETE";
   deleteButton.setAttribute("class", "todoDelete");
-  container().appendChild(deleteButton);
+  todoContainer.appendChild(deleteButton);
 };
 
 export { getInput, addDivs };

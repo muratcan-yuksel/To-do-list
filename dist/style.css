@@ -27,6 +27,15 @@ body {
   grid-row: 10/12;
   grid-column: 1/3;
 }
+.todoContainer {
+  background-color: cadetblue;
+  grid-column: 3/12;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/*
 .todoCheck {
   grid-column: 3/4;
 }
@@ -44,9 +53,9 @@ body {
 }
 .todoDelete {
   margin-right: 2em;
-  grid-column: 11;
+  grid-column: 6;
 }
-
+*/
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
