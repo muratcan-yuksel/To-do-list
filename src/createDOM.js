@@ -15,7 +15,6 @@ const getInput = (() => {
   };
 
   const getPriority = () => {
-    //return document.querySelector('input[name="priority"]:checked').value;
     return document.querySelector('input[name="priority"]:checked').value;
   };
 

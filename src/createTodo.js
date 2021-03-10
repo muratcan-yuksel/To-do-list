@@ -18,7 +18,7 @@ const newTodo = (() => {
     todo.title = getInput.getTitle();
     todo.details = getInput.getDetails();
     todo.date = getInput.getDate();
-    this.priority = getInput.getPriority();
+    todo.priority = getInput.getPriority();
 
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file
