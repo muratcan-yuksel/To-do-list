@@ -9,21 +9,35 @@ const modal = (() => {
   var span = document.getElementsByClassName("close")[0];
 
   // When the user clicks the button, open the modal
-  btn.onclick = function () {
-    modal.style.display = "block";
+  const btnClick = () => {
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
   };
 
   // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.style.display = "none";
+  const spanClick = () => {
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
   };
 
   // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+  const windowClick = () => {
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
   };
-})();
 
-export { modal };
+  return { btnClick, spanClick, windowClick };
+})();
+//this is the shortcut function that'll be called in index.js
+const modalShortCut = () => {
+  modal.btnClick();
+  modal.spanClick();
+  modal.windowClick();
+};
+
+export { modal, modalShortCut };
