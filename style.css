@@ -81,10 +81,6 @@ body {
   color: white;
 }
 
-.modal-body {
-  padding: 2px 16px;
-}
-
 .modal-footer {
   grid-row: 6;
   grid-column: 1/5;
