@@ -19,6 +19,7 @@ const getInput = (() => {
   };
 
   const getDate = () => {
+    console.log(document.getElementById("date").value);
     return document.getElementById("date").value;
   };
 
@@ -28,6 +29,7 @@ const getInput = (() => {
 const addDivs = () => {
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
+  const date = document.createElement("DIV");
 
   title.textContent = getInput.getTitle();
   container().appendChild(title);
@@ -35,8 +37,8 @@ const addDivs = () => {
   details.textContent = getInput.getDetails();
   container().appendChild(details);
 
-  details.textContent = getInput.getDate();
-  container().appendChild(details);
+  date.textContent = getInput.getDate();
+  container().appendChild(date);
 };
 
 export { getInput, addDivs };
