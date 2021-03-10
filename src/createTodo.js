@@ -2,9 +2,9 @@ import { getInput } from "./createDOM";
 import { TodoList } from "./index";
 //Todo class
 class Todo {
-  constructor(title, dueDate, priority, details) {
+  constructor(title, date, priority, details) {
     this.title = title;
-    this.dueDate = dueDate;
+    this.date = date;
     this.priority = priority;
     this.details = details;
   }
@@ -17,8 +17,7 @@ const newTodo = (() => {
     //todo takes its values from  the user input taken at createDOM
     todo.title = getInput.getTitle();
     todo.details = getInput.getDetails();
-    todo.dueDate = getInput.getDate();
-    console.log(getInput.getDate);
+    todo.date = "oh";
 
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file

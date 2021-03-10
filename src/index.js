@@ -9,7 +9,7 @@ modal();
 const TodoList = [
   {
     title: "first to-do",
-    dueDate: "sometime",
+    date: "sometime",
     priority: "chill",
     details: "It's about something",
   },

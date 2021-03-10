@@ -1,14 +1,6 @@
 import { Todo, newTodo } from "./createTodo";
 import { container } from "./index";
 
-const createDOM = (() => {
-  //get the container Div
-  const container = document.querySelector(".container");
-
-  const title = document.createElement("DIV");
-  title.setAttribute("class", "title");
-})();
-
 //Gets the user input (value) and exports it
 const getInput = (() => {
   const getTitle = () => {
@@ -19,8 +11,8 @@ const getInput = (() => {
   };
 
   const getDate = () => {
-    console.log(document.getElementById("date").value);
-    return document.getElementById("date").value;
+    const date = document.getElementById("date").value;
+    return date;
   };
 
   return { getTitle, getDetails, getDate };
@@ -29,7 +21,7 @@ const getInput = (() => {
 const addDivs = () => {
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
-  const date = document.createElement("DIV");
+  const date1 = document.createElement("DIV");
 
   title.textContent = getInput.getTitle();
   container().appendChild(title);
@@ -37,8 +29,9 @@ const addDivs = () => {
   details.textContent = getInput.getDetails();
   container().appendChild(details);
 
-  date.textContent = getInput.getDate();
-  container().appendChild(date);
+  date1.textContent = "dateoy";
+  //getInput.getDate();
+  container().appendChild(date1);
 };
 
 export { getInput, addDivs };
