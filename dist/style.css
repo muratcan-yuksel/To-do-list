@@ -32,6 +32,7 @@ body {
   grid-column: 3/12;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  border: 1px solid black;
   /*
   display: flex;
   justify-content: space-between;
@@ -39,10 +40,10 @@ body {
 }
 
 .todoCheck {
-  grid-column: 3/4;
+  grid-column: 1;
 }
 .todoTitle {
-  grid-column: 4/5;
+  grid-column: 2/4;
 }
 .todoDetails {
   grid-column: 6/7;
@@ -55,7 +56,7 @@ body {
 }
 .todoDelete {
   margin-right: 2em;
-  grid-column: 6;
+  grid-column: 10/11;
 }
 
 /* The Modal (background) */
