@@ -3,9 +3,29 @@ body {
 }
 
 .container {
+  height: 100vh;
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(11, 1fr);
+}
+
+#header {
+  grid-column: 1/12;
+  grid-row: 1/2;
+  background-color: rgb(230, 125, 125);
+}
+#sideBar {
+  background-color: darkorange;
+  grid-row: 2/12;
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+}
+#myBtn {
+  grid-row: 10/12;
+  grid-column: 1/3;
 }
 
 /* The Modal (background) */
