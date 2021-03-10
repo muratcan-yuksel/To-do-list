@@ -22,10 +22,16 @@ const getInput = (() => {
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
+  const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
   const date = document.createElement("DIV");
   const priority = document.createElement("DIV");
+  const deleteButton = document.createElement("BUTTON");
+
+  checkBox.setAttribute("type", "checkbox");
+  checkBox.setAttribute("class", "todoCheck");
+  container().appendChild(checkBox);
 
   title.textContent = getInput.getTitle();
   title.setAttribute("class", "todoTitle");
@@ -42,6 +48,10 @@ const addDivs = () => {
   priority.innerHTML = getInput.getPriority();
   priority.setAttribute("class", "todoPriority");
   container().appendChild(priority);
+
+  deleteButton.textContent = "DELETE";
+  deleteButton.setAttribute("class", "todoDelete");
+  container().appendChild(deleteButton);
 };
 
 export { getInput, addDivs };
