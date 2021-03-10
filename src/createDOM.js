@@ -18,7 +18,11 @@ const getInput = (() => {
     return document.getElementById("details").value;
   };
 
-  return { getTitle, getDetails };
+  const getDate = () => {
+    return document.getElementById("date").value;
+  };
+
+  return { getTitle, getDetails, getDate };
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
@@ -29,6 +33,9 @@ const addDivs = () => {
   container().appendChild(title);
 
   details.textContent = getInput.getDetails();
+  container().appendChild(details);
+
+  details.textContent = getInput.getDate();
   container().appendChild(details);
 };
 

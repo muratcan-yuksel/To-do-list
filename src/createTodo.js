@@ -17,6 +17,9 @@ const newTodo = (() => {
     //todo takes its values from  the user input taken at createDOM
     todo.title = getInput.getTitle();
     todo.details = getInput.getDetails();
+    todo.dueDate = getInput.getDate();
+    console.log(getInput.getDate);
+
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file
     TodoList.push(todo);
