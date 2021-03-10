@@ -2,6 +2,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -22,7 +28,7 @@ body {
   /*position: relative;*/
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   background-color: #fefefe;
   margin: auto;
   padding: 0;
@@ -79,21 +85,31 @@ body {
   padding: 2px 16px;
   background-color: rgb(70, 70, 218);
   color: white;
+  opacity: 0.8;
 }
 
-.modal-footer {
-  grid-row: 6;
-  grid-column: 1/5;
-  padding: 2px 16px;
-  background-color: rgb(70, 70, 218);
-  color: white;
-}
 #modalSideBar {
-  background-color: rgb(48, 58, 48);
-  grid-row: 2/6;
+  grid-row: 2/10;
   grid-column: 1;
+  background-color: rgb(165, 165, 165);
+  opacity: 0.7;
 }
 #title {
-  width: 90%;
-  background-color: brown;
+  grid-column: 2/5;
+}
+#details {
+  grid-column: 2/5;
+  grid-row: span 4;
+}
+#radioButtons {
+  grid-row: 8/8;
+  grid-column: 2;
+}
+#dueDate {
+  grid-row: 7/7;
+  grid-column: 2;
+}
+#addTodo {
+  grid-row: 8/8;
+  grid-column: 4;
 }
