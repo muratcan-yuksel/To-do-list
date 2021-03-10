@@ -28,16 +28,23 @@ body {
   grid-column: 1/3;
 }
 .todoCheck {
+  grid-column: 3/4;
 }
 .todoTitle {
+  grid-column: 4/5;
 }
 .todoDetails {
+  grid-column: 6/7;
 }
 .todoDate {
+  grid-column: 8/9;
 }
 .todoPriority {
+  grid-column: 9/10;
 }
 .todoDelete {
+  margin-right: 2em;
+  grid-column: 11;
 }
 
 /* The Modal (background) */
