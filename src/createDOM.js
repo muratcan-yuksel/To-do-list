@@ -67,6 +67,15 @@ const addDivs = () => {
   function initRemoveButton() {
     this.parentNode.parentNode.removeChild(this.parentNode);
     console.log(TodoList);
+    //the below function finds the deleted todo's index in the array, and removes it
+    // I couldn't think of a way to implement this in the creaTodo.js
+    let index = TodoList.findIndex(
+      (obj) =>
+        obj.title === getInput.getTitle() &&
+        obj.details === getInput.getDetails()
+    );
+    //remove that index
+    TodoList.splice(index, 1);
   }
 };
 
