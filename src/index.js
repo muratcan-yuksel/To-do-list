@@ -19,7 +19,7 @@ const container = () => {
   return document.querySelector(".container");
 };
 
-const button = document.querySelector(".button");
+const button = document.querySelector(".addTodo");
 
 button.addEventListener("click", function () {
   newTodo.createTodo();

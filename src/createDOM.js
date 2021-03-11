@@ -60,8 +60,8 @@ const addDivs = () => {
   deleteButton.textContent = "DELETE";
   deleteButton.setAttribute("class", "todoDelete");
   todoContainer.appendChild(deleteButton);
-  //the answer is todoContainer
-  console.log(deleteButton.parentNode);
+  //add an event listener to the delete button
+  //so that it can delete the todo from the DOM
   deleteButton.addEventListener("click", initRemoveButton, false);
   //delete its parent element
   function initRemoveButton() {
