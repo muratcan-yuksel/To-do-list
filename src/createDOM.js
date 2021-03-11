@@ -62,6 +62,11 @@ const addDivs = () => {
   todoContainer.appendChild(deleteButton);
   //the answer is todoContainer
   console.log(deleteButton.parentNode);
+  deleteButton.addEventListener("click", initRemoveButton, false);
+  //delete its parent element
+  function initRemoveButton() {
+    this.parentNode.parentNode.removeChild(this.parentNode);
+  }
 };
 
 export { getInput, addDivs };

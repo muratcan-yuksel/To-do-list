@@ -1,5 +1,5 @@
 import { Todo, newTodo } from "./createTodo";
-import { getInput, addDivs, deleteTodo } from "./createDOM";
+import { getInput, addDivs } from "./createDOM";
 import { modal, modalShortCut } from "./modal";
 
 //calls the modal logic from modal.js
