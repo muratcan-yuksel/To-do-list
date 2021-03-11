@@ -23,6 +23,7 @@ const button = document.querySelector(".addTodo");
 
 button.addEventListener("click", function () {
   newTodo.createTodo();
+  console.log(TodoList);
 
   addDivs();
 });

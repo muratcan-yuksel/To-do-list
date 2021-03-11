@@ -1,5 +1,5 @@
 import { Todo, newTodo } from "./createTodo";
-import { container } from "./index";
+import { container, TodoList } from "./index";
 
 //Gets the user input (value) and exports it
 const getInput = (() => {
@@ -66,6 +66,7 @@ const addDivs = () => {
   //delete its parent element
   function initRemoveButton() {
     this.parentNode.parentNode.removeChild(this.parentNode);
+    console.log(TodoList);
   }
 };
 
