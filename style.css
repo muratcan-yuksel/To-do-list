@@ -165,6 +165,10 @@ body {
   grid-column: 1/5;
   grid-row: span 4;
 }
+#details2 {
+  grid-column: 1/5;
+  grid-row: span 6;
+}
 #radioButtons {
   grid-row: 8/8;
   grid-column: 1;
