@@ -72,22 +72,12 @@ const addProject = (() => {
     };
   };
 
-  // When the user clicks anywhere outside of the modal, close it
-  const windowClick = () => {
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-  };
-
-  return { btnClick, spanClick, windowClick, modal2 };
+  return { btnClick, spanClick, modal2 };
 })();
 
 const projectModalShortCut = () => {
   addProject.btnClick();
   addProject.spanClick();
-  addProject.windowClick();
 };
 
 export { modal, modalShortCut, addProject, projectModalShortCut };
