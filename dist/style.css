@@ -177,7 +177,8 @@ body {
   grid-row: 7/7;
   grid-column: 1;
 }
-#addTodo {
+#addTodo,
+#addProject {
   grid-row: 8/8;
   grid-column: 4;
 }

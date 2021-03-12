@@ -34,7 +34,9 @@ button.addEventListener("click", function () {
   modal.modal2().style.display = "none";
 });
 
-const projectButton = document.getElementById("projectButton");
-projectButton.addEventListener("click", function () {});
+const projectButton = document.querySelector(".addProject");
+projectButton.addEventListener("click", function () {
+  addProject.modal2().style.display = "none";
+});
 
 export { container, TodoList };
