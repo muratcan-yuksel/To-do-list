@@ -33,6 +33,7 @@ button.addEventListener("click", function () {
   console.log(TodoList);
   addDivs();
   modal.modal2().style.display = "none";
+  console.log(projectArray);
 });
 
 const projectButton = document.querySelector(".addProject");
@@ -40,4 +41,4 @@ projectButton.addEventListener("click", function () {
   addProject.modal2().style.display = "none";
 });
 
-export { container, TodoList };
+export { container, TodoList, projectArray };
