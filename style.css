@@ -64,7 +64,8 @@ body {
 }
 
 /* The Modal (background) */
-.modal {
+.modal,
+.modal2 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -79,7 +80,8 @@ body {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content,
+.modal-content2 {
   /*position: relative;*/
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -135,7 +137,8 @@ body {
   cursor: pointer;
 }
 
-.modal-header {
+.modal-header,
+.modal-header2 {
   grid-column: 1/5;
   padding: 2px 16px;
   background-color: rgb(70, 70, 218);
