@@ -46,6 +46,48 @@ const modalShortCut = () => {
 };
 
 //function that adds project
-const addProject = (() => {})();
+const addProject = (() => {
+  const btn = document.getElementById("projectButton");
+  // Get the modal
+  var modal = document.getElementById("myModal2");
+  //this will be used in index js directly to close the window on to do add
+  var modal2 = () => {
+    return document.getElementById("myModal2");
+  };
 
-export { modal, modalShortCut };
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+  const btnClick = () => {
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
+  };
+
+  // When the user clicks on <span> (x), close the modal
+  const spanClick = () => {
+    // span.onclick = function () {
+    //   modal.style.display = "none";
+    // };
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  const windowClick = () => {
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  };
+
+  return { btnClick, spanClick, windowClick, modal2 };
+})();
+
+const projectModalShortCut = () => {
+  addProject.btnClick();
+  addProject.spanClick();
+  addProject.windowClick();
+};
+
+export { modal, modalShortCut, addProject, projectModalShortCut };

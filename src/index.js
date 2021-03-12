@@ -1,10 +1,16 @@
 import { Todo, newTodo } from "./createTodo";
 import { getInput, addDivs } from "./createDOM";
-import { modal, modalShortCut } from "./modal";
+import {
+  modal,
+  modalShortCut,
+  addProject,
+  projectModalShortCut,
+} from "./modal";
 
 //calls the modal logic from modal.js
 modalShortCut();
 
+projectModalShortCut();
 //an array that holds the to-dos
 const TodoList = [
   {
@@ -27,5 +33,8 @@ button.addEventListener("click", function () {
   addDivs();
   modal.modal2().style.display = "none";
 });
+
+const projectButton = document.getElementById("projectButton");
+projectButton.addEventListener("click", function () {});
 
 export { container, TodoList };
