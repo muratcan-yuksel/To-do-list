@@ -19,11 +19,22 @@ const getInput = (() => {
   };
   //get the input from project
   const getProjectInput = () => {
+    return document.getElementById("projectAdd").value;
+  };
+  //get the input from project drop down menu
+  const getDrowDown = () => {
     const input = document.getElementById("projectAddTodo");
     return input.options[input.selectedIndex].text;
   };
 
-  return { getTitle, getDetails, getDate, getPriority, getProjectInput };
+  return {
+    getTitle,
+    getDetails,
+    getDate,
+    getPriority,
+    getProjectInput,
+    getDrowDown,
+  };
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {

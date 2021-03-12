@@ -20,7 +20,7 @@ const newTodo = (() => {
     todo.details = getInput.getDetails();
     todo.date = getInput.getDate();
     todo.priority = getInput.getPriority();
-    todo.project = getInput.getProjectInput();
+    todo.project = getInput.getDrowDown();
 
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file
