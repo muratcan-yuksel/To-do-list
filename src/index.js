@@ -20,6 +20,8 @@ const TodoList = [
     details: "It's about something",
   },
 ];
+//array that contains all the projects
+//I'll use this array to display all the saved projects later on
 const projectArray = [];
 //container Div
 const container = () => {

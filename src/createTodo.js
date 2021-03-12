@@ -24,11 +24,11 @@ const newTodo = (() => {
     //push the project into the project array
     //only if it's not already present
     //to avoid duplicity
-    if (projectArray.includes(todo.project)) {
-      return;
-    } else {
-      projectArray.push(todo.project);
-    }
+    // if (projectArray.includes(todo.project)) {
+    //   return;
+    // } else {
+    //   projectArray.push(todo.project);
+    // }
 
     console.log(projectArray);
 

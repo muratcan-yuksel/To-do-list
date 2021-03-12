@@ -1,5 +1,5 @@
 import { Todo, newTodo } from "./createTodo";
-import { container, TodoList } from "./index";
+import { container, TodoList, projectArray } from "./index";
 
 //Gets the user input (value) and exports it
 const getInput = (() => {
@@ -105,6 +105,7 @@ const addProjects = (() => {
     const newProject = document.createElement("DIV");
     newProject.setAttribute("class", "project");
     newProject.textContent = getInput.getProjectInput();
+    projectArray.push(getInput.getProjectInput());
     projectsDiv.appendChild(newProject);
   });
 })();
