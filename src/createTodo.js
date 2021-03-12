@@ -21,16 +21,6 @@ const newTodo = (() => {
     todo.date = getInput.getDate();
     todo.priority = getInput.getPriority();
     todo.project = getInput.getDrowDown();
-    //push the project into the project array
-    //only if it's not already present
-    //to avoid duplicity
-    // if (projectArray.includes(todo.project)) {
-    //   return;
-    // } else {
-    //   projectArray.push(todo.project);
-    // }
-
-    console.log(projectArray);
 
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file

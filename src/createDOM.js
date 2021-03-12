@@ -105,7 +105,7 @@ const addProjects = (() => {
     const newProject = document.createElement("DIV");
     newProject.setAttribute("class", "project");
     newProject.textContent = getInput.getProjectInput();
-    projectArray.push(getInput.getProjectInput());
+    projectArray.push([getInput.getProjectInput()]);
     projectsDiv.appendChild(newProject);
   });
 })();
