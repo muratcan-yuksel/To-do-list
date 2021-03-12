@@ -51,7 +51,7 @@ const addProject = (() => {
   // Get the modal
   var modal = document.getElementById("myModal2");
   //this will be used in index js directly to close the window on to do add
-  var modal2 = () => {
+  var modal25 = () => {
     return document.getElementById("myModal2");
   };
 
@@ -67,9 +67,9 @@ const addProject = (() => {
 
   // When the user clicks on <span> (x), close the modal
   const spanClick = () => {
-    // span.onclick = function () {
-    //   modal.style.display = "none";
-    // };
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
   };
 
   // When the user clicks anywhere outside of the modal, close it
@@ -81,7 +81,7 @@ const addProject = (() => {
     };
   };
 
-  return { btnClick, spanClick, windowClick, modal2 };
+  return { btnClick, spanClick, windowClick, modal25 };
 })();
 
 const projectModalShortCut = () => {
