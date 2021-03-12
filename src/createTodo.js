@@ -2,11 +2,12 @@ import { getInput } from "./createDOM";
 import { TodoList } from "./index";
 //Todo class
 class Todo {
-  constructor(title, date, priority, details) {
+  constructor(title, date, priority, details, project) {
     this.title = title;
     this.date = date;
     this.priority = priority;
     this.details = details;
+    this.project = project;
   }
 }
 //Creates a new todo upon function calling
@@ -19,6 +20,7 @@ const newTodo = (() => {
     todo.details = getInput.getDetails();
     todo.date = getInput.getDate();
     todo.priority = getInput.getPriority();
+    todo.project = getInput.getProjectInput();
 
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file
