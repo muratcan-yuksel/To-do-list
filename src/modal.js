@@ -1,6 +1,11 @@
+//Function that adds individual To-dos
 const modal = (() => {
   // Get the modal
   var modal = document.getElementById("myModal");
+  //this will be used in index js directly to close the window on to do add
+  var modal2 = () => {
+    return document.getElementById("myModal");
+  };
 
   // Get the button that opens the modal
   var btn = document.getElementById("myBtn");
@@ -31,7 +36,7 @@ const modal = (() => {
     };
   };
 
-  return { btnClick, spanClick, windowClick };
+  return { btnClick, spanClick, windowClick, modal2 };
 })();
 //this is the shortcut function that'll be called in index.js
 const modalShortCut = () => {
@@ -39,5 +44,8 @@ const modalShortCut = () => {
   modal.spanClick();
   modal.windowClick();
 };
+
+//function that adds project
+const addProject = (() => {})();
 
 export { modal, modalShortCut };

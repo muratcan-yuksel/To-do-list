@@ -20,12 +20,12 @@ const container = () => {
 };
 
 const button = document.querySelector(".addTodo");
-
+//function that starts the to-do adding process
 button.addEventListener("click", function () {
   newTodo.createTodo();
   console.log(TodoList);
-
   addDivs();
+  modal.modal2().style.display = "none";
 });
 
 export { container, TodoList };
