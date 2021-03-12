@@ -19,7 +19,8 @@ const getInput = (() => {
   };
   //get the input from project
   const getProjectInput = () => {
-    return document.getElementById("projectAdd").value;
+    const input = document.getElementById("projectAddTodo");
+    return input.options[input.selectedIndex].text;
   };
 
   return { getTitle, getDetails, getDate, getPriority, getProjectInput };

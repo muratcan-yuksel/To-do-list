@@ -20,6 +20,7 @@ const TodoList = [
     details: "It's about something",
   },
 ];
+const projectArray = [];
 //container Div
 const container = () => {
   return document.querySelector(".container");
