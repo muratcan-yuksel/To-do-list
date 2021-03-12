@@ -17,8 +17,12 @@ const getInput = (() => {
   const getPriority = () => {
     return document.querySelector('input[name="priority"]:checked').value;
   };
+  //get the input from project
+  const getProjectInput = () => {
+    return document.getElementById("projectAdd").value;
+  };
 
-  return { getTitle, getDetails, getDate, getPriority };
+  return { getTitle, getDetails, getDate, getPriority, getProjectInput };
 })();
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
@@ -78,5 +82,19 @@ const addDivs = () => {
     TodoList.splice(index, 1);
   }
 };
+//add projects to the side bar
+const addProjects = (() => {
+  //get the project adding button
+  const button = document.querySelector(".addProject");
+  //get the projects div
+  const projectsDiv = document.querySelector("#projects");
+
+  button.addEventListener("click", function (e) {
+    const newProject = document.createElement("DIV");
+    newProject.setAttribute("class", "project");
+    newProject.textContent = getInput.getProjectInput();
+    projectsDiv.appendChild(newProject);
+  });
+})();
 
 export { getInput, addDivs };
