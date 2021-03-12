@@ -165,9 +165,9 @@ body {
   grid-column: 1/5;
   grid-row: span 4;
 }
-#details2 {
+#projectAdd {
   grid-column: 1/5;
-  grid-row: span 6;
+  grid-row: span 1;
 }
 #radioButtons {
   grid-row: 8/8;
