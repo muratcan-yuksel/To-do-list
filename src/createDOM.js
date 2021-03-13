@@ -77,7 +77,7 @@ const addDivs = () => {
   deleteButton.setAttribute("class", "todoDelete");
   todoContainer.appendChild(deleteButton);
   //a deleteing module to keep things just a bit tidier
-  const deletingfunction = (() => {
+  const deleteModule = (() => {
     //add an event listener to the delete button
     //so that it can delete the todo from the DOM
     deleteButton.addEventListener("click", initRemoveButton, false);
@@ -108,8 +108,6 @@ const addDivs = () => {
       }
     }
   })();
-
-  const addDivsForProjects = () => {};
 };
 //add projects to the side bar
 const addProjects = (() => {
@@ -131,5 +129,14 @@ const addProjects = (() => {
     }
   });
 })();
+
+const addDivsForProjects = () => {
+  const projectButtons = document.querySelectorAll(".project");
+  //now an event listener
+  //will first delete .todoContainer
+  //and then create its own
+  //will use what's inside of its specific array
+  //to display what's inside of it
+};
 
 export { getInput, addDivs, addProjects };
