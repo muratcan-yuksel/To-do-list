@@ -26,10 +26,14 @@ body {
 #myBtn {
   grid-row: 10/12;
   grid-column: 2/3;
+  background: none;
+  border: none;
 }
 #projectButton {
   grid-row: 10/12;
   grid-column: 1/2;
+  background: none;
+  border: none;
 }
 .todoContainer {
   background-color: cadetblue;
