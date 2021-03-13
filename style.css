@@ -182,3 +182,7 @@ body {
   grid-row: 8/8;
   grid-column: 4;
 }
+.project {
+  background: none;
+  border: none;
+}
