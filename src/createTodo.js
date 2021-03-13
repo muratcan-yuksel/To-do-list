@@ -20,7 +20,7 @@ const newTodo = (() => {
     todo.details = getInput.getDetails();
     todo.date = getInput.getDate();
     todo.priority = getInput.getPriority();
-    todo.project = getInput.getDrowDown();
+    todo.project = getInput.getDropDown();
     //the following function does this:
     //it loops through the projectArray object
     //checks if the created todo shares its project name with any of the items in the object

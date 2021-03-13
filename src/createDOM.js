@@ -22,7 +22,7 @@ const getInput = (() => {
     return document.getElementById("projectAdd").value;
   };
   //get the input from project drop down menu
-  const getDrowDown = () => {
+  const getDropDown = () => {
     const input = document.getElementById("projectAddTodo");
     return input.options[input.selectedIndex].text;
   };
@@ -33,24 +33,18 @@ const getInput = (() => {
     getDate,
     getPriority,
     getProjectInput,
-    getDrowDown,
+    getDropDown,
   };
 })();
-const deneme = document.createElement("DIV");
-deneme.setAttribute("id", "deneme");
-document.querySelector(".container").appendChild(deneme);
-//give it a classname
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
   //create a todo container
   //the reason to do this is to be able to delete a singular to do element
   const todoContainer = document.createElement("DIV");
-
+  //give it a classname
   todoContainer.setAttribute("class", "todoContainer");
   //append it to the container from index.js
-  //container().appendChild(todoContainer);
-
-  deneme.appendChild(todoContainer);
+  container().appendChild(todoContainer);
   //Create elements
   const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
@@ -151,8 +145,10 @@ const addDivsForProjects = () => {
     if (!isButton) {
       return;
     }
-    const deneme = document.getElementById("deneme");
-    deneme.remove();
+    //remove all elements containing the class todoContainer
+    //this means that whenever I click on a project on the sidebar
+    //all the projects displayed on the page will be deleted
+    document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     console.dir(event.target.textContent);
   });
 };
