@@ -102,7 +102,7 @@ const addProjects = (() => {
   const projectsDiv = document.querySelector("#projects");
   //adds a new project under the projects div on click
   button.addEventListener("click", function (e) {
-    const newProject = document.createElement("DIV");
+    const newProject = document.createElement("BUTTON");
     newProject.setAttribute("class", "project");
     newProject.textContent = getInput.getProjectInput();
     projectArray.push([getInput.getProjectInput()]);
