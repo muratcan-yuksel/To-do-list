@@ -20,9 +20,16 @@ const TodoList = [
     details: "It's about something",
   },
 ];
-//array that contains all the projects
-//I'll use this array to display all the saved projects later on
+//object that contains all the project arrays
+//I'll use this object to display all the saved projects later on
 const projectArray = {};
+
+// for (i=0; i<TodoList.length; i++){
+//   for (let project in TodoList[i]{
+
+//   }
+// }
+
 //container Div
 const container = () => {
   return document.querySelector(".container");

@@ -22,6 +22,16 @@ const newTodo = (() => {
     todo.priority = getInput.getPriority();
     todo.project = getInput.getDrowDown();
 
+    for (let project in projectArray) {
+      if (project === todo.project) {
+        // projectArray.project.push(todo);
+        console.log("it works");
+        console.log(project);
+        console.log(projectArray[project]);
+        projectArray[project].push(todo);
+      }
+    }
+
     console.log(todo);
     //push the new todo into the Todolist array from the index.js file
     TodoList.push(todo);
