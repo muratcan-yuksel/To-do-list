@@ -110,7 +110,7 @@ const addProjects = (() => {
 
     let deneme = document.querySelectorAll(".project");
     for (let i = 0; i < deneme.length; i++) {
-      projectArray[deneme[i].textContent] = i;
+      projectArray[deneme[i].textContent] = [];
     }
   });
 })();
