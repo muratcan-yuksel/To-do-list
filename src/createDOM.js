@@ -36,15 +36,21 @@ const getInput = (() => {
     getDrowDown,
   };
 })();
+const deneme = document.createElement("DIV");
+deneme.setAttribute("id", "deneme");
+document.querySelector(".container").appendChild(deneme);
+//give it a classname
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
   //create a todo container
   //the reason to do this is to be able to delete a singular to do element
   const todoContainer = document.createElement("DIV");
-  //give it a classname
+
   todoContainer.setAttribute("class", "todoContainer");
   //append it to the container from index.js
-  container().appendChild(todoContainer);
+  //container().appendChild(todoContainer);
+
+  deneme.appendChild(todoContainer);
   //Create elements
   const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
@@ -129,16 +135,25 @@ const addProjects = (() => {
     }
   });
 })();
-
+const projectModule = (() => {})();
 const addDivsForProjects = () => {
-  const projectButtons = document.querySelectorAll(".project");
   //now an event listener
   //will first delete .todoContainer
   //and then create its own
   //will use what's inside of its specific array
   //to display what's inside of it
-  projectButtons.addEventListener("click", function (e) {
-    console.log(e.target.textContent);
+
+  //use event bubbling and target the projects div
+  const wrapper = document.getElementById("projects");
+  //add an event listener but check if the thing that's clicked is a button or nay
+  wrapper.addEventListener("click", (event) => {
+    const isButton = event.target.nodeName === "BUTTON";
+    if (!isButton) {
+      return;
+    }
+    const deneme = document.getElementById("deneme");
+    deneme.remove();
+    console.dir(event.target.textContent);
   });
 };
 

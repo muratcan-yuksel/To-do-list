@@ -50,22 +50,6 @@ projectButton.addEventListener("click", function () {
   addProject.modal2().style.display = "none";
 });
 
-const projectButtons = document.querySelectorAll(".project");
-//now an event listener
-//will first delete .todoContainer
-//and then create its own
-//will use what's inside of its specific array
-//to display what's inside of it
-
-const wrapper = document.getElementById("projects");
-
-wrapper.addEventListener("click", (event) => {
-  const isButton = event.target.nodeName === "BUTTON";
-  if (!isButton) {
-    return;
-  }
-
-  console.dir(event.target.textContent);
-});
+addDivsForProjects();
 
 export { container, TodoList, projectArray };
