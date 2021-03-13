@@ -105,8 +105,13 @@ const addProjects = (() => {
     const newProject = document.createElement("BUTTON");
     newProject.setAttribute("class", "project");
     newProject.textContent = getInput.getProjectInput();
-    projectArray.push([getInput.getProjectInput()]);
+    //projectArray.push([getInput.getProjectInput()]);
     projectsDiv.appendChild(newProject);
+
+    let deneme = document.querySelectorAll(".project");
+    for (let i = 0; i < deneme.length; i++) {
+      projectArray[deneme[i].textContent] = i;
+    }
   });
 })();
 
