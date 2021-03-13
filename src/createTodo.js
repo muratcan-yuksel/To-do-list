@@ -21,10 +21,12 @@ const newTodo = (() => {
     todo.date = getInput.getDate();
     todo.priority = getInput.getPriority();
     todo.project = getInput.getDrowDown();
-
+    //the following function does this:
+    //it loops through the projectArray object
+    //checks if the created todo shares its project name with any of the items in the object
+    //if that's the case, pushes the todo into THAT project array into the projectArray object
     for (let project in projectArray) {
       if (project === todo.project) {
-        // projectArray.project.push(todo);
         console.log("it works");
         console.log(project);
         console.log(projectArray[project]);
