@@ -93,17 +93,19 @@ const addDivs = () => {
     //remove that index
     TodoList.splice(index, 1);
 
-    //this function supposedly should delete the same element from the created array in projectArray object too
+    //this function deletes the same element from the created array in projectArray object too
     for (let project in projectArray) {
-      let index = project.findIndex(
+      console.log("new thing " + projectArray[project]);
+      let index = projectArray[project].findIndex(
         (obj) =>
           obj.title === getInput.getTitle() &&
           obj.details === getInput.getDetails()
       );
       //remove that index
-      TodoList.splice(index, 1);
+      projectArray[project].splice(index, 1);
     }
   }
+  const addDivsForProjects = () => {};
 };
 //add projects to the side bar
 const addProjects = (() => {
