@@ -76,35 +76,39 @@ const addDivs = () => {
   deleteButton.textContent = "DELETE";
   deleteButton.setAttribute("class", "todoDelete");
   todoContainer.appendChild(deleteButton);
-  //add an event listener to the delete button
-  //so that it can delete the todo from the DOM
-  deleteButton.addEventListener("click", initRemoveButton, false);
-  //delete its parent element
-  function initRemoveButton() {
-    this.parentNode.parentNode.removeChild(this.parentNode);
-    console.log(TodoList);
-    //the below function finds the deleted todo's index in the array, and removes it
-    // I couldn't think of a way to implement this in the creaTodo.js
-    let index = TodoList.findIndex(
-      (obj) =>
-        obj.title === getInput.getTitle() &&
-        obj.details === getInput.getDetails()
-    );
-    //remove that index
-    TodoList.splice(index, 1);
-
-    //this function deletes the same element from the created array in projectArray object too
-    for (let project in projectArray) {
-      console.log("new thing " + projectArray[project]);
-      let index = projectArray[project].findIndex(
+  //a deleteing module to keep things just a bit tidier
+  const deletingfunction = (() => {
+    //add an event listener to the delete button
+    //so that it can delete the todo from the DOM
+    deleteButton.addEventListener("click", initRemoveButton, false);
+    //delete its parent element
+    function initRemoveButton() {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+      console.log(TodoList);
+      //the below function finds the deleted todo's index in the array, and removes it
+      // I couldn't think of a way to implement this in the creaTodo.js
+      let index = TodoList.findIndex(
         (obj) =>
           obj.title === getInput.getTitle() &&
           obj.details === getInput.getDetails()
       );
       //remove that index
-      projectArray[project].splice(index, 1);
+      TodoList.splice(index, 1);
+
+      //this function deletes the same element from the created array in projectArray object too
+      for (let project in projectArray) {
+        console.log("new thing " + projectArray[project]);
+        let index = projectArray[project].findIndex(
+          (obj) =>
+            obj.title === getInput.getTitle() &&
+            obj.details === getInput.getDetails()
+        );
+        //remove that index
+        projectArray[project].splice(index, 1);
+      }
     }
-  }
+  })();
+
   const addDivsForProjects = () => {};
 };
 //add projects to the side bar
