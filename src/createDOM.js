@@ -137,6 +137,9 @@ const addDivsForProjects = () => {
   //and then create its own
   //will use what's inside of its specific array
   //to display what's inside of it
+  projectButtons.addEventListener("click", function (e) {
+    console.log(e.target.textContent);
+  });
 };
 
-export { getInput, addDivs, addProjects };
+export { getInput, addDivs, addProjects, addDivsForProjects };
