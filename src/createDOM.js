@@ -98,7 +98,7 @@ const addDivs = () => {
 
       //this function deletes the same element from the created array in projectArray object too
       for (let project in projectArray) {
-        console.log("new thing " + projectArray[project]);
+        // console.log("new thing " + projectArray[project]);
         let index = projectArray[project].findIndex(
           (obj) =>
             obj.title === getInput.getTitle() &&
@@ -150,26 +150,69 @@ const addDivsForProjects = () => {
     //this means that whenever I click on a project on the sidebar
     //all the projects displayed on the page will be deleted
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
-    console.dir(event.target.textContent);
+    // console.dir(event.target.textContent);
     //the following function loops through the project array and finds the individual objects inside of it
     for (let project in projectArray) {
-      console.log(projectArray[project]);
+      // console.log(projectArray[project]);
+      //create a todo container
+      //the reason to do this is to be able to delete a singular to do element
+      for (let i = 0; i < projectArray[project].length; i++) {
+        if (event.target.textContent === projectArray[project][i].project) {
+          const todoContainer = document.createElement("DIV");
+          //give it a classname
+          todoContainer.setAttribute("class", "todoContainer");
+          //append it to the container from index.js
+          container().appendChild(todoContainer);
+          console.log(projectArray[project][i].title);
+
+          //Create elements
+          const checkBox = document.createElement("INPUT");
+          const title = document.createElement("DIV");
+          const details = document.createElement("DIV");
+          const date = document.createElement("DIV");
+          const priority = document.createElement("DIV");
+          const deleteButton = document.createElement("BUTTON");
+          // set their attributes for identification and append them to the todo container Div
+          checkBox.setAttribute("type", "checkbox");
+          checkBox.setAttribute("class", "todoCheck");
+          todoContainer.appendChild(checkBox);
+
+          title.textContent = projectArray[project][i].title;
+          title.setAttribute("class", "todoTitle");
+          todoContainer.appendChild(title);
+
+          details.textContent = projectArray[project][i].details;
+          details.setAttribute("class", "todoDetails");
+          todoContainer.appendChild(details);
+
+          date.innerHTML = projectArray[project][i].date;
+          date.setAttribute("class", "todoDate");
+          todoContainer.appendChild(date);
+
+          priority.innerHTML = projectArray[project][i].priority;
+          priority.setAttribute("class", "todoPriority");
+          todoContainer.appendChild(priority);
+
+          deleteButton.textContent = "DELETE";
+          deleteButton.setAttribute("class", "todoDelete");
+          todoContainer.appendChild(deleteButton);
+          //
+        }
+      }
+
       //this function continues and loops through the found objects, and makes its key/value pairs accessible
       for (let object in projectArray[project]) {
-        console.log(object);
-
-        console.log(projectArray[project][object].title);
+        // console.log(object);
+        // console.log(projectArray[project][object].title);
         //this is the 3rd tier, it gives the values of every single objects keys
         // for (let values in projectArray[project][object]) {
         //   console.log(projectArray[project][object][values][0]);
         //   //if (event.target.textContent === );
         // }
-        if (
-          event.target.textContent === projectArray[project][object].project
-        ) {
-          // console.log("eurekkaa?"); YES! EUREKA!
-          //add display logic here
-        }
+        // console.log(event.target.textContent);
+        // console.log(projectArray[project].length);
+        // console.log(projectArray[project][object].title);
+        // console.log(projectArray[project][object]);
       }
     }
   });
