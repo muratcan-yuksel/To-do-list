@@ -27,9 +27,9 @@ const newTodo = (() => {
     //if that's the case, pushes the todo into THAT project array into the projectArray object
     for (let project in projectArray) {
       if (project === todo.project) {
-        console.log(projectArray[project]);
+        // console.log(projectArray[project]);
         projectArray[project].push(todo);
-        console.log("this is the last one " + projectArray[project]);
+        // console.log("this is the last one " + projectArray[project]);
       }
     }
 
