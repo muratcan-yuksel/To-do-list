@@ -152,14 +152,71 @@ const addDivsForProjects = () => {
     //the following function loops through the project array and finds the individual objects inside of it
     for (let project in projectArray) {
       console.log(projectArray[project]);
-      //create a todo container
-      //the reason to do this is to be able to delete a singular to do element
+
+      projectArray[project].forEach((element, index) => {
+        console.log(element);
+        if (event.target.textContent === element.project) {
+          const todoContainer = document.createElement("DIV");
+          //give it a classname
+          todoContainer.setAttribute("class", "todoContainer");
+          //append it to the container from index.js
+          container().appendChild(todoContainer);
+          console.log(projectArray[project]);
+
+          //Create elements
+          const checkBox = document.createElement("INPUT");
+          const title = document.createElement("DIV");
+          const details = document.createElement("DIV");
+          const date = document.createElement("DIV");
+          const priority = document.createElement("DIV");
+          const deleteButton = document.createElement("BUTTON");
+          // set their attributes for identification and append them to the todo container Div
+          checkBox.setAttribute("type", "checkbox");
+          checkBox.setAttribute("class", "todoCheck");
+          todoContainer.appendChild(checkBox);
+
+          title.textContent = element.title;
+          title.setAttribute("class", "todoTitle");
+          todoContainer.appendChild(title);
+
+          details.textContent = element.details;
+          details.setAttribute("class", "todoDetails");
+          todoContainer.appendChild(details);
+
+          date.innerHTML = element.date;
+          date.setAttribute("class", "todoDate");
+          todoContainer.appendChild(date);
+
+          priority.innerHTML = element.priority;
+          priority.setAttribute("class", "todoPriority");
+          todoContainer.appendChild(priority);
+
+          deleteButton.textContent = "DELETE";
+          deleteButton.setAttribute("class", "todoDelete");
+          todoContainer.appendChild(deleteButton);
+
+          deleteButton.addEventListener("click", initRemoveButton, false);
+
+          function initRemoveButton() {
+            this.parentNode.parentNode.removeChild(this.parentNode);
+            //find the index that contains the book name and details related to the delete button
+            //the difference here from the above function is elemen.titleor details
+            index = projectArray[project].findIndex(
+              (obj) =>
+                obj.title === element.title && obj.details === element.details
+            );
+            //remove that index
+            projectArray[project].splice(index, 1);
+          }
+        }
+      });
     }
   });
 };
 
 export { getInput, addDivs, addProjects, addDivsForProjects };
-
+//create a todo container
+//the reason to do this is to be able to delete a singular to do element
 // for (let i = 0; i < projectArray[project].length; i++) {
 //   if (event.target.textContent === projectArray[project][i].project) {
 //     const todoContainer = document.createElement("DIV");
