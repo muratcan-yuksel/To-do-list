@@ -216,13 +216,13 @@ const addDivsForProjects = () => {
               //this function deletes the same element from the created array in projectArray object too
 
               // console.log("new thing " + projectArray[project]);
-              let index = projectArray[project].findIndex(
+              let index2 = projectArray[project].findIndex(
                 (obj) =>
                   obj.title === projectArray[project][i].title.textContent &&
                   obj.details === projectArray[project][i].details.textContent
               );
               //remove that index
-              projectArray[project].splice(index, 1);
+              projectArray[project].splice(index2, 1);
 
               console.log(TodoList);
             }
