@@ -130,7 +130,6 @@ const addProjects = (() => {
     }
   });
 })();
-const projectModule = (() => {})();
 const addDivsForProjects = () => {
   //now an event listener
   //will first delete .todoContainer
@@ -197,74 +196,42 @@ const addDivsForProjects = () => {
           deleteButton.setAttribute("class", "todoDelete");
           todoContainer.appendChild(deleteButton);
           //
-        }
-      }
+          const deleteModule = (() => {
+            //add an event listener to the delete button
+            //so that it can delete the todo from the DOM
+            deleteButton.addEventListener("click", initRemoveButton, false);
+            //delete its parent element
+            function initRemoveButton() {
+              this.parentNode.parentNode.removeChild(this.parentNode);
 
-      //this function continues and loops through the found objects, and makes its key/value pairs accessible
-      for (let object in projectArray[project]) {
-        // console.log(object);
-        // console.log(projectArray[project][object].title);
-        //this is the 3rd tier, it gives the values of every single objects keys
-        // for (let values in projectArray[project][object]) {
-        //   console.log(projectArray[project][object][values][0]);
-        //   //if (event.target.textContent === );
-        // }
-        // console.log(event.target.textContent);
-        // console.log(projectArray[project].length);
-        // console.log(projectArray[project][object].title);
-        // console.log(projectArray[project][object]);
+              //the below function finds the deleted todo's index in the array, and removes it
+              // I couldn't think of a way to implement this in the creaTodo.js
+              let index = TodoList.findIndex(
+                (obj) =>
+                  obj.title === getInput.getTitle() &&
+                  obj.details === getInput.getDetails()
+              );
+              //remove that index
+              TodoList.splice(index, 1);
+
+              //this function deletes the same element from the created array in projectArray object too
+              for (let project in projectArray) {
+                // console.log("new thing " + projectArray[project]);
+                let index = projectArray[project].findIndex(
+                  (obj) =>
+                    obj.title === getInput.getTitle() &&
+                    obj.details === getInput.getDetails()
+                );
+                //remove that index
+                projectArray[project].splice(index, 1);
+              }
+              console.log(TodoList);
+            }
+          })();
+        }
       }
     }
   });
 };
 
 export { getInput, addDivs, addProjects, addDivsForProjects };
-
-// for (let project in projectArray) {
-//   if (project === todo.project) {
-//     console.log("it works");
-//     console.log(project);
-//     console.log(projectArray[project]);
-//     projectArray[project].push(todo);
-//   }
-// }
-
-//create a todo container
-//the reason to do this is to be able to delete a singular to do element
-// const todoContainer = document.createElement("DIV");
-// //give it a classname
-// todoContainer.setAttribute("class", "todoContainer");
-// //append it to the container from index.js
-// container().appendChild(todoContainer);
-// //Create elements
-// const checkBox = document.createElement("INPUT");
-// const title = document.createElement("DIV");
-// const details = document.createElement("DIV");
-// const date = document.createElement("DIV");
-// const priority = document.createElement("DIV");
-// const deleteButton = document.createElement("BUTTON");
-// // set their attributes for identification and append them to the todo container Div
-// checkBox.setAttribute("type", "checkbox");
-// checkBox.setAttribute("class", "todoCheck");
-// todoContainer.appendChild(checkBox);
-
-// title.textContent = projectArray[project][object].title;
-// title.setAttribute("class", "todoTitle");
-// todoContainer.appendChild(title);
-
-// details.textContent = projectArray[project][object].details;
-// details.setAttribute("class", "todoDetails");
-// todoContainer.appendChild(details);
-
-// date.innerHTML = projectArray[project][object].date;
-// date.setAttribute("class", "todoDate");
-// todoContainer.appendChild(date);
-
-// priority.innerHTML = projectArray[project][object].priority;
-// priority.setAttribute("class", "todoPriority");
-// todoContainer.appendChild(priority);
-
-// deleteButton.textContent = "DELETE";
-// deleteButton.setAttribute("class", "todoDelete");
-// todoContainer.appendChild(deleteButton);
-// //
