@@ -207,6 +207,17 @@ const addDivsForProjects = () => {
             );
             //remove that index
             projectArray[project].splice(index, 1);
+
+            index = TodoList.findIndex(
+              (obj) =>
+                obj.title === element.title && obj.details === element.details
+            );
+            //remove that index
+            TodoList.splice(index, 1);
+
+            console.log(TodoList);
+            console.log(projectArray);
+            console.log(projectArray[project]);
           }
         }
       });
