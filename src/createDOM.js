@@ -85,27 +85,27 @@ const addDivs = () => {
     //delete its parent element
     function initRemoveButton() {
       this.parentNode.parentNode.removeChild(this.parentNode);
-      // console.log(TodoList);
+      console.log(TodoList);
       //the below function finds the deleted todo's index in the array, and removes it
       // I couldn't think of a way to implement this in the creaTodo.js
-      // let index = TodoList.findIndex(
-      //   (obj) =>
-      //     obj.title === title.textContent && obj.details === details.textContent
-      // );
-      // //remove that index
-      // TodoList.splice(index, 1);
+      let index = TodoList.findIndex(
+        (obj) =>
+          obj.title === title.textContent && obj.details === details.textContent
+      );
+      //remove that index
+      TodoList.splice(index, 1);
 
-      // //this function deletes the same element from the created array in projectArray object too
-      // for (let project in projectArray) {
-      //   // console.log("new thing " + projectArray[project]);
-      //   let index = projectArray[project].findIndex(
-      //     (obj) =>
-      //       obj.title === title.textContent &&
-      //       obj.details === details.textContent
-      //   );
-      //   //remove that index
-      //   projectArray[project].splice(index, 1);
-      // }
+      //this function deletes the same element from the created array in projectArray object too
+      for (let project in projectArray) {
+        // console.log("new thing " + projectArray[project]);
+        let index = projectArray[project].findIndex(
+          (obj) =>
+            obj.title === title.textContent &&
+            obj.details === details.textContent
+        );
+        //remove that index
+        projectArray[project].splice(index, 1);
+      }
     }
   })();
 };
@@ -149,7 +149,7 @@ const addDivsForProjects = () => {
     //all the projects displayed on the page will be deleted
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     // console.dir(event.target.textContent);
-    //the following function loops through the projectArray object and finds the individual arrays inside of it
+    //the following function loops through the project array and finds the individual objects inside of it
     for (let project in projectArray) {
       // console.log(projectArray[project]);
       //create a todo container
@@ -161,7 +161,7 @@ const addDivsForProjects = () => {
           todoContainer.setAttribute("class", "todoContainer");
           //append it to the container from index.js
           container().appendChild(todoContainer);
-          // console.log(projectArray[project][i].title);
+          console.log(projectArray[project][i].title);
 
           //Create elements
           const checkBox = document.createElement("INPUT");
@@ -202,31 +202,29 @@ const addDivsForProjects = () => {
             //delete its parent element
             function initRemoveButton() {
               this.parentNode.parentNode.removeChild(this.parentNode);
-              // console.log(TodoList);
+              console.log(TodoList);
               //the below function finds the deleted todo's index in the array, and removes it
               // I couldn't think of a way to implement this in the creaTodo.js
-              //the following is totally useless for some reason
-              // index = TodoList.findIndex(
-              //   (obj) =>
-              //     obj.title === projectArray[project][i].title.textContent &&
-              //     obj.details === projectArray[project][i].details.textContent
-              //   //the aboe was originally like this: details.textContent etc. That worked the same too, dunno why
-              // );
-              // //remove that index
-              // TodoList.splice(index, 1);
+              let index = TodoList.findIndex(
+                (obj) =>
+                  obj.title === title.textContent &&
+                  obj.details === details.textContent
+              );
+              //remove that index
+              TodoList.splice(index, 1);
 
               //this function deletes the same element from the created array in projectArray object too
-
-              // console.log("new thing " + projectArray[project]);
-              // let index = projectArray[project].findIndex(
-              //   (obj) =>
-              //     obj.title === projectArray[project][i].title.textContent &&
-              //     obj.details === projectArray[project][i].details.textContent
-              // );
-              // //remove that index
-              // projectArray[project].splice(index, 1);
-
-              console.log(projectArray[project][i];
+              for (let project in projectArray) {
+                // console.log("new thing " + projectArray[project]);
+                let index = projectArray[project].findIndex(
+                  (obj) =>
+                    obj.title === title.textContent &&
+                    obj.details === details.textContent
+                );
+                //remove that index
+                projectArray[project].splice(index, 1);
+              }
+              console.log(TodoList);
             }
           })();
         }
