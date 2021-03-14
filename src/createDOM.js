@@ -151,13 +151,54 @@ const addDivsForProjects = () => {
     //all the projects displayed on the page will be deleted
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     console.dir(event.target.textContent);
-
+    //the following function loops through the project array and finds the individual objects inside of it
     for (let project in projectArray) {
       console.log("this project" + projectArray[project]);
-      for (let go in projectArray[project]) {
-        console.log(go);
-        console.log(projectArray[project][go].details);
+      //this function continues and loops through the found objects, and makes its key/value pairs accessible
+      for (let object in projectArray[project]) {
+        console.log(object);
+        console.log(projectArray[project][object].title);
+        //now that I can access the details of the objects, I'll copy the code from addDivs with slight changes
+        //those changes are related to the textContent. Because now I'm taking the value from the object, not the DOM
+        //call the above function so you wouldn't need to copy all those lines
+        //create a todo container
+        //the reason to do this is to be able to delete a singular to do element
+        const todoContainer = document.createElement("DIV");
+        //give it a classname
+        todoContainer.setAttribute("class", "todoContainer");
+        //append it to the container from index.js
+        container().appendChild(todoContainer);
+        //Create elements
+        const checkBox = document.createElement("INPUT");
+        const title = document.createElement("DIV");
+        const details = document.createElement("DIV");
+        const date = document.createElement("DIV");
+        const priority = document.createElement("DIV");
+        const deleteButton = document.createElement("BUTTON");
+        // set their attributes for identification and append them to the todo container Div
+        checkBox.setAttribute("type", "checkbox");
+        checkBox.setAttribute("class", "todoCheck");
+        todoContainer.appendChild(checkBox);
 
+        title.textContent = getInput.getTitle();
+        title.setAttribute("class", "todoTitle");
+        todoContainer.appendChild(title);
+
+        details.textContent = getInput.getDetails();
+        details.setAttribute("class", "todoDetails");
+        todoContainer.appendChild(details);
+
+        date.innerHTML = getInput.getDate();
+        date.setAttribute("class", "todoDate");
+        todoContainer.appendChild(date);
+
+        priority.innerHTML = getInput.getPriority();
+        priority.setAttribute("class", "todoPriority");
+        todoContainer.appendChild(priority);
+
+        deleteButton.textContent = "DELETE";
+        deleteButton.setAttribute("class", "todoDelete");
+        todoContainer.appendChild(deleteButton);
         // for (let end in projectArray[project][go]) {
         //   console.log(projectArray[project][go][end]);
         // }
