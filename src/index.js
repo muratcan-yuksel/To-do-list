@@ -24,12 +24,6 @@ const TodoList = [
 //I'll use this object to display all the saved projects later on
 const projectArray = {};
 
-// for (i=0; i<TodoList.length; i++){
-//   for (let project in TodoList[i]{
-
-//   }
-// }
-
 //container Div
 const container = () => {
   return document.querySelector(".container");

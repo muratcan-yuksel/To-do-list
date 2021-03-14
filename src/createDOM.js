@@ -36,6 +36,7 @@ const getInput = (() => {
     getDropDown,
   };
 })();
+
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
   //create a todo container
@@ -122,10 +123,10 @@ const addProjects = (() => {
     newProject.textContent = getInput.getProjectInput();
     //projectArray.push([getInput.getProjectInput()]);
     projectsDiv.appendChild(newProject);
-
-    let deneme = document.querySelectorAll(".project");
-    for (let i = 0; i < deneme.length; i++) {
-      projectArray[deneme[i].textContent] = [];
+    //push the created project as an array inside the projectArray object
+    let projectPush = document.querySelectorAll(".project");
+    for (let i = 0; i < projectPush.length; i++) {
+      projectArray[projectPush[i].textContent] = [];
     }
   });
 })();
@@ -150,7 +151,28 @@ const addDivsForProjects = () => {
     //all the projects displayed on the page will be deleted
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     console.dir(event.target.textContent);
+
+    for (let project in projectArray) {
+      console.log("this project" + projectArray[project]);
+      for (let go in projectArray[project]) {
+        console.log(go);
+        console.log(projectArray[project][go].details);
+
+        // for (let end in projectArray[project][go]) {
+        //   console.log(projectArray[project][go][end]);
+        // }
+      }
+    }
   });
 };
 
 export { getInput, addDivs, addProjects, addDivsForProjects };
+
+// for (let project in projectArray) {
+//   if (project === todo.project) {
+//     console.log("it works");
+//     console.log(project);
+//     console.log(projectArray[project]);
+//     projectArray[project].push(todo);
+//   }
+// }
