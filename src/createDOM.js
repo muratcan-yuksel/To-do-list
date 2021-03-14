@@ -157,12 +157,19 @@ const addDivsForProjects = () => {
       //this function continues and loops through the found objects, and makes its key/value pairs accessible
       for (let object in projectArray[project]) {
         console.log(object);
-        //console.log(projectArray[project][object].title);
+
+        console.log(projectArray[project][object].title);
         //this is the 3rd tier, it gives the values of every single objects keys
         // for (let values in projectArray[project][object]) {
         //   console.log(projectArray[project][object][values][0]);
         //   //if (event.target.textContent === );
         // }
+        if (
+          event.target.textContent === projectArray[project][object].project
+        ) {
+          // console.log("eurekkaa?"); YES! EUREKA!
+          //add display logic here
+        }
       }
     }
   });
