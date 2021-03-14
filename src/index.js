@@ -44,6 +44,6 @@ projectButton.addEventListener("click", function () {
   addProject.modal2().style.display = "none";
 });
 
-// addDivsForProjects();
+addDivsForProjects();
 
 export { container, TodoList, projectArray };
