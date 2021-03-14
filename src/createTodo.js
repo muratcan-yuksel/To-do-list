@@ -24,7 +24,7 @@ const newTodo = (() => {
     //the following function does this:
     //it loops through the projectArray object
     //checks if the created todo shares its project name with any of the items in the object
-    //if that's the case, pushes the todo into THAT project array into the projectArray object
+    //if that's the case, pushes the todo into THAT project array in the projectArray object
     for (let project in projectArray) {
       if (project === todo.project) {
         // console.log(projectArray[project]);
