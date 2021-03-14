@@ -225,5 +225,17 @@ const addDivsForProjects = () => {
     }
   });
 };
+// function that will be called in index.js
+//it cretes dropdown menu projects
+const addDropDown = () => {
+  //create an option element
+  const option = document.createElement("OPTION");
+  //its value comes from the text input of projects
+  option.setAttribute("value", getInput.getProjectInput());
+  option.textContent = getInput.getProjectInput();
+  //get the container to append the above option
+  const optionCOntainer = document.getElementById("projectAddTodo");
+  optionCOntainer.appendChild(option);
+};
 
-export { getInput, addDivs, addProjects, addDivsForProjects };
+export { getInput, addDivs, addProjects, addDivsForProjects, addDropDown };

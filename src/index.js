@@ -1,5 +1,10 @@
 import { Todo, newTodo } from "./createTodo";
-import { getInput, addDivs, addDivsForProjects } from "./createDOM";
+import {
+  getInput,
+  addDivs,
+  addDivsForProjects,
+  addDropDown,
+} from "./createDOM";
 import {
   modal,
   modalShortCut,
@@ -32,16 +37,22 @@ const container = () => {
 const button = document.querySelector(".addTodo");
 //function that starts the to-do adding process
 button.addEventListener("click", function () {
+  //create new todo
   newTodo.createTodo();
   console.log(TodoList);
+  //call the div adding function
   addDivs();
+  //dunno what's this
   modal.modal2().style.display = "none";
   console.log(projectArray);
 });
 
 const projectButton = document.querySelector(".addProject");
 projectButton.addEventListener("click", function () {
+  //I have no idea what is this. Forgotten already.
   addProject.modal2().style.display = "none";
+  //call the dropdown menu project creating function
+  addDropDown();
 });
 
 addDivsForProjects();
