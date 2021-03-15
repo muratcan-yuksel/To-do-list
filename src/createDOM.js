@@ -239,6 +239,13 @@ const addDropDown = () => {
 };
 
 const displayHome = () => {
+  //get the projects in the side bar
+  const sideBarProjects = document.getElementById("projects");
+  const homeButton = document.createElement("BUTTON");
+  homeButton.setAttribute("class", "project");
+  homeButton.textContent = "Home";
+  sideBarProjects.appendChild(homeButton);
+
   TodoList.forEach((element, index) => {
     //create a container
     const todoContainer = document.createElement("DIV");

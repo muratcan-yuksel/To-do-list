@@ -58,4 +58,6 @@ projectButton.addEventListener("click", function () {
 
 addDivsForProjects();
 
+window.onload = displayHome();
+
 export { container, TodoList, projectArray };
