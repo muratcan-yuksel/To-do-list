@@ -247,50 +247,49 @@ const displayHome = () => {
   //create a button named "Home"
   const homeButton = document.createElement("BUTTON");
   homeButton.setAttribute("class", "project");
-  homeButton.setAttribute("id", "homeButton1");
   homeButton.textContent = "Home";
   sideBarProjects.appendChild(homeButton);
-  const homie = document.getElementById("homeButton1");
-  homie.addEventListener("click", (e) => {
-    console.log(TodoList);
-    TodoList.forEach((element, index) => {
-      console.log("bo");
-      //create a container
-      const todoContainer = document.createElement("DIV");
-      //give it a classname
-      todoContainer.setAttribute("class", "todoContainer");
-      //append it to the container from index.js
-      container().appendChild(todoContainer);
-      //Create elements
-      const checkBox = document.createElement("INPUT");
-      const title = document.createElement("DIV");
-      const details = document.createElement("DIV");
-      const date = document.createElement("DIV");
-      const priority = document.createElement("DIV");
-      const deleteButton = document.createElement("BUTTON");
-      // set their attributes for identification and append them to the todo container Div
-      checkBox.setAttribute("type", "checkbox");
-      checkBox.setAttribute("class", "todoCheck");
-      todoContainer.appendChild(checkBox);
-      title.textContent = element.title;
-      title.setAttribute("class", "todoTitle");
-      todoContainer.appendChild(title);
-      details.textContent = element.details;
-      details.setAttribute("class", "todoDetails");
-      todoContainer.appendChild(details);
-      date.innerHTML = element.date;
-      date.setAttribute("class", "todoDate");
-      todoContainer.appendChild(date);
-      priority.innerHTML = element.priority;
-      priority.setAttribute("class", "todoPriority");
-      todoContainer.appendChild(priority);
-      deleteButton.textContent = "DELETE";
-      deleteButton.setAttribute("class", "todoDelete");
-      todoContainer.appendChild(deleteButton);
-      //create an event listener on the delete button
-      //deleteButton.addEventListener("click", initRemoveButton, false);
-    });
+
+  //homeButton.addEventListener("click", (e) => {
+  //get the todo list from the local storage and display it
+  JSON.parse(localStorage.getItem("TodoList")).forEach((element, index) => {
+    console.log("bo");
+    //create a container
+    const todoContainer = document.createElement("DIV");
+    //give it a classname
+    todoContainer.setAttribute("class", "todoContainer");
+    //append it to the container from index.js
+    container().appendChild(todoContainer);
+    //Create elements
+    const checkBox = document.createElement("INPUT");
+    const title = document.createElement("DIV");
+    const details = document.createElement("DIV");
+    const date = document.createElement("DIV");
+    const priority = document.createElement("DIV");
+    const deleteButton = document.createElement("BUTTON");
+    // set their attributes for identification and append them to the todo container Div
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.setAttribute("class", "todoCheck");
+    todoContainer.appendChild(checkBox);
+    title.textContent = element.title;
+    title.setAttribute("class", "todoTitle");
+    todoContainer.appendChild(title);
+    details.textContent = element.details;
+    details.setAttribute("class", "todoDetails");
+    todoContainer.appendChild(details);
+    date.innerHTML = element.date;
+    date.setAttribute("class", "todoDate");
+    todoContainer.appendChild(date);
+    priority.innerHTML = element.priority;
+    priority.setAttribute("class", "todoPriority");
+    todoContainer.appendChild(priority);
+    deleteButton.textContent = "DELETE";
+    deleteButton.setAttribute("class", "todoDelete");
+    todoContainer.appendChild(deleteButton);
+    //create an event listener on the delete button
+    //deleteButton.addEventListener("click", initRemoveButton, false);
   });
+  // });
 };
 
 //this part might be totally useles
@@ -314,6 +313,7 @@ const displayHome = () => {
 //   //   projectsDiv.appendChild(newProject);
 //   }
 // }
+
 export {
   getInput,
   addDivs,

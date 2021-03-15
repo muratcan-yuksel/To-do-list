@@ -37,6 +37,11 @@ const newTodo = (() => {
     //push the new todo into the Todolist array from the index.js file
     TodoList.push(todo);
     console.log(TodoList);
+    //save the todoList into local storage
+    if (typeof window !== "undefined") {
+      localStorage.setItem("TodoList", JSON.stringify(TodoList));
+    }
+
     return;
   };
 

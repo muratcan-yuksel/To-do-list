@@ -60,4 +60,13 @@ addDivsForProjects();
 
 window.onload = displayHome();
 
-export { container, TodoList, projectArray };
+console.log(JSON.parse(localStorage.getItem("TodoList")));
+const updatedTodoList = JSON.parse(localStorage.getItem("TodoList"));
+
+if (typeof window !== "undefined") {
+  console.log("we are running on the client");
+} else {
+  console.log("we are running on the server");
+}
+
+export { container, TodoList, projectArray, updatedTodoList };
