@@ -128,6 +128,8 @@ const addProjects = (() => {
     let projectPush = document.querySelectorAll(".project");
     for (let i = 0; i < projectPush.length; i++) {
       projectArray[projectPush[i].textContent] = [];
+      //save project array to the local storage
+      localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
   });
 })();
