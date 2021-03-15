@@ -238,4 +238,75 @@ const addDropDown = () => {
   optionCOntainer.appendChild(option);
 };
 
-export { getInput, addDivs, addProjects, addDivsForProjects, addDropDown };
+const displayHome = () => {
+  TodoList.forEach((element, index) => {
+    //create a container
+    const todoContainer = document.createElement("DIV");
+    //give it a classname
+    todoContainer.setAttribute("class", "todoContainer");
+    //append it to the container from index.js
+    container().appendChild(todoContainer);
+    //Create elements
+    const checkBox = document.createElement("INPUT");
+    const title = document.createElement("DIV");
+    const details = document.createElement("DIV");
+    const date = document.createElement("DIV");
+    const priority = document.createElement("DIV");
+    const deleteButton = document.createElement("BUTTON");
+    // set their attributes for identification and append them to the todo container Div
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.setAttribute("class", "todoCheck");
+    todoContainer.appendChild(checkBox);
+
+    title.textContent = element.title;
+    title.setAttribute("class", "todoTitle");
+    todoContainer.appendChild(title);
+
+    details.textContent = element.details;
+    details.setAttribute("class", "todoDetails");
+    todoContainer.appendChild(details);
+
+    date.innerHTML = element.date;
+    date.setAttribute("class", "todoDate");
+    todoContainer.appendChild(date);
+
+    priority.innerHTML = element.priority;
+    priority.setAttribute("class", "todoPriority");
+    todoContainer.appendChild(priority);
+
+    deleteButton.textContent = "DELETE";
+    deleteButton.setAttribute("class", "todoDelete");
+    todoContainer.appendChild(deleteButton);
+    //create an event listener on the delete button
+    deleteButton.addEventListener("click", initRemoveButton, false);
+  });
+};
+//this part might be totally useles
+//won't I already save things with local storage?
+// const displayProjects=()=>{
+//   //get the projects in the side bar
+//   const sideBarProjects= document.getElementById("projects");
+//   //get the div that takes the project names dynamically
+//   const projectsDiv= document.getElementById("projectAddTodo");
+//   for (i=0; i< projectsDiv.length; i++){
+//     const newProject = document.createElement("BUTTON");
+//       newProject.setAttribute("class", "project");
+//        newProject.textContent = getInput.getProjectInput();
+
+//   //     //adds a new project under the projects div on click
+//   // button.addEventListener("click", function (e) {
+//   //   const newProject = document.createElement("BUTTON");
+//   //   newProject.setAttribute("class", "project");
+//   //   newProject.textContent = getInput.getProjectInput();
+//   //   //projectArray.push([getInput.getProjectInput()]);
+//   //   projectsDiv.appendChild(newProject);
+//   }
+// }
+export {
+  getInput,
+  addDivs,
+  addProjects,
+  addDivsForProjects,
+  addDropDown,
+  displayHome,
+};

@@ -4,6 +4,7 @@ import {
   addDivs,
   addDivsForProjects,
   addDropDown,
+  displayHome,
 } from "./createDOM";
 import {
   modal,
