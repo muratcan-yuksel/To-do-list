@@ -31,7 +31,9 @@ let TodoList = [
 TodoList = JSON.parse(localStorage.getItem("TodoList"));
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
-const projectArray = {};
+let projectArray = {};
+//do the same local storage trick for the project array
+projectArray = JSON.parse(localStorage.getItem("projectArray"));
 
 //container Div
 const container = () => {
