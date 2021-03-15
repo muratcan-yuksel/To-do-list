@@ -297,6 +297,8 @@ const displayHome = () => {
       );
       //remove that index
       TodoList.splice(index, 1);
+      //save the local storage
+      localStorage.setItem("TodoList", JSON.stringify(TodoList));
     }
   });
   // });

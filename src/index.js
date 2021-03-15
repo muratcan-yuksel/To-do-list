@@ -18,7 +18,7 @@ modalShortCut();
 
 projectModalShortCut();
 //an array that holds the to-dos
-const TodoList = [
+let TodoList = [
   {
     title: "first to-do",
     date: "sometime",
@@ -26,6 +26,9 @@ const TodoList = [
     details: "It's about something",
   },
 ];
+//I reassigne TodoList to use the local storage in createTodo.js
+//in the form of TodoList
+TodoList = JSON.parse(localStorage.getItem("TodoList"));
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
 const projectArray = {};
