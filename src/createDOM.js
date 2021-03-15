@@ -157,7 +157,10 @@ const addDivsForProjects = () => {
       projectArray[project].forEach((element, index) => {
         console.log(element);
         //if the selected projects name corresponds to that of the selected array's...
-        if (event.target.textContent === element.project) {
+        if (
+          event.target.textContent === element.project ||
+          event.target.textContent === "Home"
+        ) {
           //create a container
           const todoContainer = document.createElement("DIV");
           //give it a classname
@@ -241,51 +244,55 @@ const addDropDown = () => {
 const displayHome = () => {
   //get the projects in the side bar
   const sideBarProjects = document.getElementById("projects");
+  //create a button named "Home"
   const homeButton = document.createElement("BUTTON");
   homeButton.setAttribute("class", "project");
   homeButton.textContent = "Home";
   sideBarProjects.appendChild(homeButton);
 
-  TodoList.forEach((element, index) => {
-    //create a container
-    const todoContainer = document.createElement("DIV");
-    //give it a classname
-    todoContainer.setAttribute("class", "todoContainer");
-    //append it to the container from index.js
-    container().appendChild(todoContainer);
-    //Create elements
-    const checkBox = document.createElement("INPUT");
-    const title = document.createElement("DIV");
-    const details = document.createElement("DIV");
-    const date = document.createElement("DIV");
-    const priority = document.createElement("DIV");
-    const deleteButton = document.createElement("BUTTON");
-    // set their attributes for identification and append them to the todo container Div
-    checkBox.setAttribute("type", "checkbox");
-    checkBox.setAttribute("class", "todoCheck");
-    todoContainer.appendChild(checkBox);
+  homeButton.addEventListener("click", (e) => {
+    console.log(TodoList);
+    // TodoList.forEach((element, index) => {
+    //   //create a container
+    //   const todoContainer = document.createElement("DIV");
+    //   //give it a classname
+    //   todoContainer.setAttribute("class", "todoContainer");
+    //   //append it to the container from index.js
+    //   container().appendChild(todoContainer);
+    //   //Create elements
+    //   const checkBox = document.createElement("INPUT");
+    //   const title = document.createElement("DIV");
+    //   const details = document.createElement("DIV");
+    //   const date = document.createElement("DIV");
+    //   const priority = document.createElement("DIV");
+    //   const deleteButton = document.createElement("BUTTON");
+    //   // set their attributes for identification and append them to the todo container Div
+    //   checkBox.setAttribute("type", "checkbox");
+    //   checkBox.setAttribute("class", "todoCheck");
+    //   todoContainer.appendChild(checkBox);
 
-    title.textContent = element.title;
-    title.setAttribute("class", "todoTitle");
-    todoContainer.appendChild(title);
+    //   title.textContent = element.title;
+    //   title.setAttribute("class", "todoTitle");
+    //   todoContainer.appendChild(title);
 
-    details.textContent = element.details;
-    details.setAttribute("class", "todoDetails");
-    todoContainer.appendChild(details);
+    //   details.textContent = element.details;
+    //   details.setAttribute("class", "todoDetails");
+    //   todoContainer.appendChild(details);
 
-    date.innerHTML = element.date;
-    date.setAttribute("class", "todoDate");
-    todoContainer.appendChild(date);
+    //   date.innerHTML = element.date;
+    //   date.setAttribute("class", "todoDate");
+    //   todoContainer.appendChild(date);
 
-    priority.innerHTML = element.priority;
-    priority.setAttribute("class", "todoPriority");
-    todoContainer.appendChild(priority);
+    //   priority.innerHTML = element.priority;
+    //   priority.setAttribute("class", "todoPriority");
+    //   todoContainer.appendChild(priority);
 
-    deleteButton.textContent = "DELETE";
-    deleteButton.setAttribute("class", "todoDelete");
-    todoContainer.appendChild(deleteButton);
-    //create an event listener on the delete button
-    deleteButton.addEventListener("click", initRemoveButton, false);
+    //   deleteButton.textContent = "DELETE";
+    //   deleteButton.setAttribute("class", "todoDelete");
+    //   todoContainer.appendChild(deleteButton);
+    //   //create an event listener on the delete button
+    //   //deleteButton.addEventListener("click", initRemoveButton, false);
+    // });
   });
 };
 //this part might be totally useles
