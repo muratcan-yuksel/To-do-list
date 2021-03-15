@@ -287,7 +287,17 @@ const displayHome = () => {
     deleteButton.setAttribute("class", "todoDelete");
     todoContainer.appendChild(deleteButton);
     //create an event listener on the delete button
-    //deleteButton.addEventListener("click", initRemoveButton, false);
+    deleteButton.addEventListener("click", initRemoveButton, false);
+    function initRemoveButton() {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+      //it only deletes the index from the todolist array, but what about deleting the project form its respective proejct array?
+
+      index = TodoList.findIndex(
+        (obj) => obj.title === element.title && obj.details === element.details
+      );
+      //remove that index
+      TodoList.splice(index, 1);
+    }
   });
   // });
 };
