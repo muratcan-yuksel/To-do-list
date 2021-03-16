@@ -131,9 +131,13 @@ const addProjects = (() => {
   });
 })();
 const displayProjects = () => {
+  const projectsDiv = document.querySelector("#projects");
   let projects = document.querySelectorAll(".project");
-  for (let k in JSON.parse(localStorage.getItem("projectArray"))) {
-    console.log("ooooh");
+  for (let keys in JSON.parse(localStorage.getItem("projectArray"))) {
+    const newProject = document.createElement("BUTTON");
+    newProject.setAttribute("class", "project");
+    newProject.textContent = keys;
+    projectsDiv.appendChild(newProject);
   }
 };
 const addDivsForProjects = () => {
