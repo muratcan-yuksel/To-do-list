@@ -13,6 +13,7 @@ import {
   projectModalShortCut,
 } from "./modal";
 import { addDivsOnClick } from "./addDivsOnClick";
+import { addProjects } from "./addProjects";
 
 //calls the modal logic from modal.js
 modalShortCut();
@@ -56,6 +57,9 @@ projectButton.addEventListener("click", function () {
   addProject.modal2().style.display = "none";
   //call the dropdown menu project creating function
   // addDropDown();
+
+  addProjects();
+  console.log(projectArray);
 });
 
 // addDivsForProjects();
