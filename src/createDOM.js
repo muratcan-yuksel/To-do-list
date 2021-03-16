@@ -165,8 +165,8 @@ const addDivsForProjects = () => {
     // console.dir(event.target.textContent);
     //the following function loops through the projectArray object and finds the individual arrays inside of it
     for (let project in JSON.parse(localStorage.getItem("projectArray"))) {
-      // //this is an array
-      // console.log(projectArray[project]);
+      //this is an array
+      console.log(projectArray[project]);
       //so that means I can loop through it with forEach
       JSON.parse(localStorage.getItem("projectArray"))[project].forEach(
         (element, index) => {
