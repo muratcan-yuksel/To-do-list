@@ -1,19 +1,17 @@
 import { Todo, newTodo } from "./createTodo";
-// import {
-//   getInput,
-//   addDivs,
-//   addDivsForProjects,
-//   addDropDown,
-//   displayHome,
-// } from "./createDOM";
+import {
+  getInput,
+  addDivs,
+  addDivsForProjects,
+  addDropDown,
+  displayHome,
+} from "./createDOM";
 import {
   modal,
   modalShortCut,
   addProject,
   projectModalShortCut,
 } from "./modal";
-import { addDivsOnClick } from "./addDivsOnClick";
-import { addProjects, addDropDown } from "./addProjects";
 
 //calls the modal logic from modal.js
 modalShortCut();
@@ -26,7 +24,6 @@ const TodoList = [
     date: "sometime",
     priority: "chill",
     details: "It's about something",
-    project: "Home",
   },
 ];
 //object that contains all the project arrays
@@ -45,7 +42,7 @@ button.addEventListener("click", function () {
   newTodo.createTodo();
   console.log(TodoList);
   //call the div adding function
-  addDivsOnClick();
+  addDivs();
   //dunno what's this
   modal.modal2().style.display = "none";
   console.log(projectArray);
@@ -55,16 +52,12 @@ const projectButton = document.querySelector(".addProject");
 projectButton.addEventListener("click", function () {
   //I have no idea what is this. Forgotten already.
   addProject.modal2().style.display = "none";
-  // call the dropdown menu project creating function
+  //call the dropdown menu project creating function
   addDropDown();
-  //add projects to the projectArray object
-  addProjects();
-  //
-  // sideProjects();
-  console.log(projectArray);
 });
-// addDivsForProjects();
 
-// window.onload = displayHome();
+addDivsForProjects();
+
+window.onload = displayHome();
 
 export { container, TodoList, projectArray };
