@@ -323,7 +323,32 @@ const displayHome = () => {
     deleteButton.setAttribute("class", "todoDelete");
     todoContainer.appendChild(deleteButton);
     //create an event listener on the delete button
-    //deleteButton.addEventListener("click", initRemoveButton, false);
+    deleteButton.addEventListener("click", initRemoveButton, false);
+    function initRemoveButton() {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+      //find the index that contains the title and details related to the delete button
+      //look for the index in the selected array that contains the object that corresponds to the delete button's indication
+      for (let project in JSON.parse(localStorage.getItem("projectArray"))) {
+        index = JSON.parse(localStorage.getItem("projectArray"))[
+          project
+        ].findIndex(
+          (obj) =>
+            obj.title === element.title && obj.details === element.details
+        );
+        //remove that index
+        JSON.parse(localStorage.getItem("projectArray"))[project].splice(
+          index,
+          1
+        );
+      }
+
+      //do the same for the general TodoList array
+      index = JSON.parse(localStorage.getItem("TodoList")).findIndex(
+        (obj) => obj.title === element.title && obj.details === element.details
+      );
+      //remove that index
+      JSON.parse(localStorage.getItem("TodoList")).splice(index, 1);
+    }
   });
 };
 //this part might be totally useles
