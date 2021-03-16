@@ -30,18 +30,18 @@ const newTodo = (() => {
         // console.log(projectArray[project]);
         projectArray[project].push(todo);
         // console.log("this is the last one " + projectArray[project]);
+        localStorage.setItem("projectArray", JSON.stringify(projectArray));
       }
-      localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
 
     //push the new todo into the Todolist array from the index.js file
     TodoList.push(todo);
 
     //save the todoList into local storage
-    if (typeof window !== "undefined") {
-      localStorage.setItem("TodoList", JSON.stringify(TodoList));
-      localStorage.setItem("projectArray", JSON.stringify(projectArray));
-    }
+    // if (typeof window !== "undefined") {
+    localStorage.setItem("TodoList", JSON.stringify(TodoList));
+    //   localStorage.setItem("projectArray", JSON.stringify(projectArray));
+    // }
 
     return;
   };
