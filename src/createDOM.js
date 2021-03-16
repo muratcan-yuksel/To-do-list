@@ -126,9 +126,16 @@ const addProjects = (() => {
     let projectPush = document.querySelectorAll(".project");
     for (let i = 0; i < projectPush.length; i++) {
       projectArray[projectPush[i].textContent] = [];
+      localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
   });
 })();
+const displayProjects = () => {
+  let projects = document.querySelectorAll(".project");
+  for (let k in JSON.parse(localStorage.getItem("projectArray"))) {
+    console.log("ooooh");
+  }
+};
 const addDivsForProjects = () => {
   //now an event listener
   //will first delete .todoContainer
@@ -323,4 +330,5 @@ export {
   addDivsForProjects,
   addDropDown,
   displayHome,
+  displayProjects,
 };

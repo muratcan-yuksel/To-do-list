@@ -5,6 +5,7 @@ import {
   addDivsForProjects,
   addDropDown,
   displayHome,
+  displayProjects,
 } from "./createDOM";
 import {
   modal,
@@ -59,5 +60,6 @@ projectButton.addEventListener("click", function () {
 addDivsForProjects();
 
 window.onload = displayHome();
+window.onload = displayProjects();
 
 export { container, TodoList, projectArray };
