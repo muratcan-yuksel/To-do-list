@@ -1,17 +1,18 @@
 import { Todo, newTodo } from "./createTodo";
-import {
-  getInput,
-  addDivs,
-  addDivsForProjects,
-  addDropDown,
-  displayHome,
-} from "./createDOM";
+// import {
+//   getInput,
+//   addDivs,
+//   addDivsForProjects,
+//   addDropDown,
+//   displayHome,
+// } from "./createDOM";
 import {
   modal,
   modalShortCut,
   addProject,
   projectModalShortCut,
 } from "./modal";
+import { addDivsOnClick } from "./addDivsOnClick";
 
 //calls the modal logic from modal.js
 modalShortCut();
@@ -43,7 +44,7 @@ button.addEventListener("click", function () {
   newTodo.createTodo();
   console.log(TodoList);
   //call the div adding function
-  addDivs();
+  addDivsOnClick();
   //dunno what's this
   modal.modal2().style.display = "none";
   console.log(projectArray);
@@ -54,11 +55,11 @@ projectButton.addEventListener("click", function () {
   //I have no idea what is this. Forgotten already.
   addProject.modal2().style.display = "none";
   //call the dropdown menu project creating function
-  addDropDown();
+  // addDropDown();
 });
 
-addDivsForProjects();
+// addDivsForProjects();
 
-window.onload = displayHome();
+// window.onload = displayHome();
 
 export { container, TodoList, projectArray };
