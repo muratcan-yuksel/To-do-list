@@ -132,7 +132,8 @@ const addProjects = (() => {
 })();
 const displayProjects = () => {
   const projectsDiv = document.querySelector("#projects");
-  let projects = document.querySelectorAll(".project");
+  //why's this here?
+  // let projects = document.querySelectorAll(".project");
   for (let keys in JSON.parse(localStorage.getItem("projectArray"))) {
     if (keys != "Home") {
       const newProject = document.createElement("BUTTON");
@@ -163,81 +164,90 @@ const addDivsForProjects = () => {
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     // console.dir(event.target.textContent);
     //the following function loops through the projectArray object and finds the individual arrays inside of it
-    for (let project in projectArray) {
-      //this is an array
-      console.log(projectArray[project]);
+    for (let project in JSON.parse(localStorage.getItem("projectArray"))) {
+      // //this is an array
+      // console.log(projectArray[project]);
       //so that means I can loop through it with forEach
-      projectArray[project].forEach((element, index) => {
-        console.log(element);
-        //if the selected projects name corresponds to that of the selected array's...
-        if (
-          event.target.textContent === element.project ||
-          event.target.textContent === "Home"
-        ) {
-          //create a container
-          const todoContainer = document.createElement("DIV");
-          //give it a classname
-          todoContainer.setAttribute("class", "todoContainer");
-          //append it to the container from index.js
-          container().appendChild(todoContainer);
-          //Create elements
-          const checkBox = document.createElement("INPUT");
-          const title = document.createElement("DIV");
-          const details = document.createElement("DIV");
-          const date = document.createElement("DIV");
-          const priority = document.createElement("DIV");
-          const deleteButton = document.createElement("BUTTON");
-          // set their attributes for identification and append them to the todo container Div
-          checkBox.setAttribute("type", "checkbox");
-          checkBox.setAttribute("class", "todoCheck");
-          todoContainer.appendChild(checkBox);
+      JSON.parse(localStorage.getItem("projectArray"))[project].forEach(
+        (element, index) => {
+          console.log(element);
+          //if the selected projects name corresponds to that of the selected array's...
+          if (
+            event.target.textContent === element.project ||
+            event.target.textContent === "Home"
+          ) {
+            //create a container
+            const todoContainer = document.createElement("DIV");
+            //give it a classname
+            todoContainer.setAttribute("class", "todoContainer");
+            //append it to the container from index.js
+            container().appendChild(todoContainer);
+            //Create elements
+            const checkBox = document.createElement("INPUT");
+            const title = document.createElement("DIV");
+            const details = document.createElement("DIV");
+            const date = document.createElement("DIV");
+            const priority = document.createElement("DIV");
+            const deleteButton = document.createElement("BUTTON");
+            // set their attributes for identification and append them to the todo container Div
+            checkBox.setAttribute("type", "checkbox");
+            checkBox.setAttribute("class", "todoCheck");
+            todoContainer.appendChild(checkBox);
 
-          title.textContent = element.title;
-          title.setAttribute("class", "todoTitle");
-          todoContainer.appendChild(title);
+            title.textContent = element.title;
+            title.setAttribute("class", "todoTitle");
+            todoContainer.appendChild(title);
 
-          details.textContent = element.details;
-          details.setAttribute("class", "todoDetails");
-          todoContainer.appendChild(details);
+            details.textContent = element.details;
+            details.setAttribute("class", "todoDetails");
+            todoContainer.appendChild(details);
 
-          date.innerHTML = element.date;
-          date.setAttribute("class", "todoDate");
-          todoContainer.appendChild(date);
+            date.innerHTML = element.date;
+            date.setAttribute("class", "todoDate");
+            todoContainer.appendChild(date);
 
-          priority.innerHTML = element.priority;
-          priority.setAttribute("class", "todoPriority");
-          todoContainer.appendChild(priority);
+            priority.innerHTML = element.priority;
+            priority.setAttribute("class", "todoPriority");
+            todoContainer.appendChild(priority);
 
-          deleteButton.textContent = "DELETE";
-          deleteButton.setAttribute("class", "todoDelete");
-          todoContainer.appendChild(deleteButton);
-          //create an event listener on the delete button
-          deleteButton.addEventListener("click", initRemoveButton, false);
-          //deleting function
-          function initRemoveButton() {
-            this.parentNode.parentNode.removeChild(this.parentNode);
-            //find the index that contains the title and details related to the delete button
-            //look for the index in the selected array that contains the object that corresponds to the delete button's indication
-            index = projectArray[project].findIndex(
-              (obj) =>
-                obj.title === element.title && obj.details === element.details
-            );
-            //remove that index
-            projectArray[project].splice(index, 1);
-            //do the same for the general TodoList array
-            index = TodoList.findIndex(
-              (obj) =>
-                obj.title === element.title && obj.details === element.details
-            );
-            //remove that index
-            TodoList.splice(index, 1);
+            deleteButton.textContent = "DELETE";
+            deleteButton.setAttribute("class", "todoDelete");
+            todoContainer.appendChild(deleteButton);
+            //create an event listener on the delete button
+            deleteButton.addEventListener("click", initRemoveButton, false);
+            //deleting function
+            function initRemoveButton() {
+              this.parentNode.parentNode.removeChild(this.parentNode);
+              //find the index that contains the title and details related to the delete button
+              //look for the index in the selected array that contains the object that corresponds to the delete button's indication
+              index = JSON.parse(localStorage.getItem("projectArray"))[
+                project
+              ].findIndex(
+                (obj) =>
+                  obj.title === element.title && obj.details === element.details
+              );
+              //remove that index
+              JSON.parse(localStorage.getItem("projectArray"))[project].splice(
+                index,
+                1
+              );
+              //do the same for the general TodoList array
+              index = TodoList.findIndex(
+                (obj) =>
+                  obj.title === element.title && obj.details === element.details
+              );
+              //remove that index
+              TodoList.splice(index, 1);
 
-            console.log(TodoList);
-            console.log(projectArray);
-            console.log(projectArray[project]);
+              console.log(TodoList);
+              console.log(JSON.parse(localStorage.getItem("projectArray")));
+              console.log(
+                JSON.parse(localStorage.getItem("projectArray"))[project]
+              );
+            }
           }
         }
-      });
+      );
     }
   });
 };
