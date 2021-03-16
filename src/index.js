@@ -13,7 +13,7 @@ import {
   projectModalShortCut,
 } from "./modal";
 import { addDivsOnClick } from "./addDivsOnClick";
-import { addProjects } from "./addProjects";
+import { addProjects, addDropDown } from "./addProjects";
 
 //calls the modal logic from modal.js
 modalShortCut();
@@ -55,13 +55,14 @@ const projectButton = document.querySelector(".addProject");
 projectButton.addEventListener("click", function () {
   //I have no idea what is this. Forgotten already.
   addProject.modal2().style.display = "none";
-  //call the dropdown menu project creating function
-  // addDropDown();
-
+  // call the dropdown menu project creating function
+  addDropDown();
+  //add projects to the projectArray object
   addProjects();
+  //
+  // sideProjects();
   console.log(projectArray);
 });
-
 // addDivsForProjects();
 
 // window.onload = displayHome();

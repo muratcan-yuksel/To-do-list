@@ -5,15 +5,48 @@ import { getInput } from "./getInput";
 const addProjects = () => {
   //get the project adding button
   const button = document.querySelector(".addProject");
+
   button.addEventListener("click", function (e) {
     const newProject = getInput.getProjectInput();
+    console.log(getInput.getProjectInput());
     projectArray[newProject] = [];
-    console.log(newProject);
+    // console.log(newProject);
+    // console.log(projectArray[projectArray.length - 1]);
     console.log(projectArray);
+    // //side projects
+    // // get the projects div
+    const projectsDiv = document.querySelector("#projects");
+    for (let project in projectArray) {
+      const projectButton = document.createElement("BUTTON");
+      projectButton.setAttribute("class", "project");
+      projectButton.textContent = newProject;
+      //projectArray.push([getInput.getProjectInput()]);
+      projectsDiv.appendChild(projectButton);
+    }
   });
 };
 
-export { addProjects };
+//it cretes dropdown menu projects
+const addDropDown = () => {
+  //create an option element
+  const option = document.createElement("OPTION");
+  //its value comes from the text input of projects
+  option.setAttribute("value", getInput.getProjectInput());
+  option.textContent = getInput.getProjectInput();
+  //get the container to append the above option
+  const optionCOntainer = document.getElementById("projectAddTodo");
+  optionCOntainer.appendChild(option);
+};
+
+// const sideProjects = () => {
+//   //get the project adding button
+//   const button = document.querySelector(".addProject");
+//   button.addEventListener("click", function (e) {
+
+//   });
+// };
+
+export { addProjects, addDropDown };
 
 // //get the project adding button
 // const button = document.querySelector(".addProject");
