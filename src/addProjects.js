@@ -1,12 +1,14 @@
 import { Todo, newTodo } from "./createTodo";
 import { container, TodoList, projectArray } from "./index";
+import { getInput } from "./getInput";
 
 const addProjects = () => {
   //get the project adding button
   const button = document.querySelector(".addProject");
   button.addEventListener("click", function (e) {
     const newProject = getInput.getProjectInput();
-    projectArray.push(newProject);
+    projectArray[newProject] = [];
+    console.log(newProject);
     console.log(projectArray);
   });
 };
