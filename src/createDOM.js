@@ -108,6 +108,8 @@ const addDivs = () => {
       }
     }
   })();
+  //added this one here from index.js/ can be changed dunno
+  localStorage.setItem("projectArray", JSON.stringify(projectArray));
 };
 //add projects to the side bar
 const addProjects = (() => {
@@ -126,7 +128,7 @@ const addProjects = (() => {
     let projectPush = document.querySelectorAll(".project");
     for (let i = 0; i < projectPush.length; i++) {
       projectArray[projectPush[i].textContent] = [];
-      localStorage.setItem("projectArray", JSON.stringify(projectArray));
+      //localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
   });
 })();

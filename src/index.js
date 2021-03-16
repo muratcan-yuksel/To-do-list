@@ -48,7 +48,6 @@ button.addEventListener("click", function () {
   //dunno what's this
   modal.modal2().style.display = "none";
   console.log(projectArray);
-  localStorage.setItem("projectArray", JSON.stringify(projectArray));
 });
 
 const projectButton = document.querySelector(".addProject");
