@@ -107,7 +107,7 @@ const addDivs = () => {
         projectArray[project].splice(index, 1);
       }
       //save project array to the local storage
-      localStorage.setItem("projectArray", JSON.stringify(projectArray));
+      localStorage.setItem("projectArray", projectArray);
     }
   })();
 };
