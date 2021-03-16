@@ -6,6 +6,7 @@ import {
   addDropDown,
   displayHome,
   displayProjects,
+  localDropDown,
 } from "./createDOM";
 import {
   modal,
@@ -61,5 +62,6 @@ addDivsForProjects();
 
 window.onload = displayHome();
 window.onload = displayProjects();
+window.onload = localDropDown;
 
 export { container, TodoList, projectArray };

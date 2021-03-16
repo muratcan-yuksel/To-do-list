@@ -251,60 +251,66 @@ const addDropDown = () => {
   const optionCOntainer = document.getElementById("projectAddTodo");
   optionCOntainer.appendChild(option);
 };
+const localDropDown = () => {
+  for (let keys in JSON.parse(localStorage.getItem("projectArray"))) {
+    //create an option element
+    const option = document.createElement("OPTION");
+    //its value comes from the text input of projects
+    option.setAttribute("value", keys);
+    option.textContent = keys;
+    //get the container to append the above option
+    const optionCOntainer = document.getElementById("projectAddTodo");
+    optionCOntainer.appendChild(option);
+  }
+};
 
 const displayHome = () => {
-  //get the projects in the side bar
-  const sideBarProjects = document.getElementById("projects");
-  //create a button named "Home"
-  const homeButton = document.createElement("BUTTON");
-  homeButton.setAttribute("class", "project");
-  homeButton.textContent = "Home";
-  sideBarProjects.appendChild(homeButton);
-
-  homeButton.addEventListener("click", (e) => {
-    console.log(TodoList);
-    TodoList.forEach((element, index) => {
-      //create a container
-      const todoContainer = document.createElement("DIV");
-      //give it a classname
-      todoContainer.setAttribute("class", "todoContainer");
-      //append it to the container from index.js
-      container().appendChild(todoContainer);
-      //Create elements
-      const checkBox = document.createElement("INPUT");
-      const title = document.createElement("DIV");
-      const details = document.createElement("DIV");
-      const date = document.createElement("DIV");
-      const priority = document.createElement("DIV");
-      const deleteButton = document.createElement("BUTTON");
-      // set their attributes for identification and append them to the todo container Div
-      checkBox.setAttribute("type", "checkbox");
-      checkBox.setAttribute("class", "todoCheck");
-      todoContainer.appendChild(checkBox);
-
-      title.textContent = element.title;
-      title.setAttribute("class", "todoTitle");
-      todoContainer.appendChild(title);
-
-      details.textContent = element.details;
-      details.setAttribute("class", "todoDetails");
-      todoContainer.appendChild(details);
-
-      date.innerHTML = element.date;
-      date.setAttribute("class", "todoDate");
-      todoContainer.appendChild(date);
-
-      priority.innerHTML = element.priority;
-      priority.setAttribute("class", "todoPriority");
-      todoContainer.appendChild(priority);
-
-      deleteButton.textContent = "DELETE";
-      deleteButton.setAttribute("class", "todoDelete");
-      todoContainer.appendChild(deleteButton);
-      //create an event listener on the delete button
-      //deleteButton.addEventListener("click", initRemoveButton, false);
-    });
-  });
+  // //get the projects in the side bar
+  // const sideBarProjects = document.getElementById("projects");
+  // //create a button named "Home"
+  // const homeButton = document.createElement("BUTTON");
+  // homeButton.setAttribute("class", "project");
+  // homeButton.textContent = "Home";
+  // sideBarProjects.appendChild(homeButton);
+  // homeButton.addEventListener("click", (e) => {
+  //   console.log(TodoList);
+  //   TodoList.forEach((element, index) => {
+  //     //create a container
+  //     const todoContainer = document.createElement("DIV");
+  //     //give it a classname
+  //     todoContainer.setAttribute("class", "todoContainer");
+  //     //append it to the container from index.js
+  //     container().appendChild(todoContainer);
+  //     //Create elements
+  //     const checkBox = document.createElement("INPUT");
+  //     const title = document.createElement("DIV");
+  //     const details = document.createElement("DIV");
+  //     const date = document.createElement("DIV");
+  //     const priority = document.createElement("DIV");
+  //     const deleteButton = document.createElement("BUTTON");
+  //     // set their attributes for identification and append them to the todo container Div
+  //     checkBox.setAttribute("type", "checkbox");
+  //     checkBox.setAttribute("class", "todoCheck");
+  //     todoContainer.appendChild(checkBox);
+  //     title.textContent = element.title;
+  //     title.setAttribute("class", "todoTitle");
+  //     todoContainer.appendChild(title);
+  //     details.textContent = element.details;
+  //     details.setAttribute("class", "todoDetails");
+  //     todoContainer.appendChild(details);
+  //     date.innerHTML = element.date;
+  //     date.setAttribute("class", "todoDate");
+  //     todoContainer.appendChild(date);
+  //     priority.innerHTML = element.priority;
+  //     priority.setAttribute("class", "todoPriority");
+  //     todoContainer.appendChild(priority);
+  //     deleteButton.textContent = "DELETE";
+  //     deleteButton.setAttribute("class", "todoDelete");
+  //     todoContainer.appendChild(deleteButton);
+  //     //create an event listener on the delete button
+  //     //deleteButton.addEventListener("click", initRemoveButton, false);
+  //   });
+  // });
 };
 //this part might be totally useles
 //won't I already save things with local storage?
@@ -335,4 +341,5 @@ export {
   addDropDown,
   displayHome,
   displayProjects,
+  localDropDown,
 };
