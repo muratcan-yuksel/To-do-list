@@ -29,7 +29,7 @@ const TodoList = [
 ];
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
-const projectArray = [];
+const projectArray = {};
 
 //container Div
 const container = () => {

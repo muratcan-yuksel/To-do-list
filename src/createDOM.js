@@ -316,11 +316,11 @@ const displayHome = () => {
 //   //   projectsDiv.appendChild(newProject);
 //   }
 // }
-export {
-  getInput,
-  addDivs,
-  addProjects,
-  addDivsForProjects,
-  addDropDown,
-  displayHome,
-};
+// export {
+//   getInput,
+//   addDivs,
+//   addProjects,
+//   addDivsForProjects,
+//   addDropDown,
+//   displayHome,
+// };
