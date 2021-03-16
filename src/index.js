@@ -18,7 +18,7 @@ modalShortCut();
 
 projectModalShortCut();
 //an array that holds the to-dos
-let TodoList = [
+const TodoList = [
   {
     title: "first to-do",
     date: "sometime",
@@ -26,14 +26,9 @@ let TodoList = [
     details: "It's about something",
   },
 ];
-//I reassigne TodoList to use the local storage in createTodo.js
-//in the form of TodoList
-TodoList = JSON.parse(localStorage.getItem("TodoList"));
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
-let projectArray = {};
-//do the same local storage trick for the project array
-projectArray = JSON.parse(localStorage.getItem("projectArray"));
+const projectArray = {};
 
 //container Div
 const container = () => {
@@ -64,14 +59,5 @@ projectButton.addEventListener("click", function () {
 addDivsForProjects();
 
 window.onload = displayHome();
-
-console.log(JSON.parse(localStorage.getItem("TodoList")));
-
-//this is a quality controle
-if (typeof window !== "undefined") {
-  console.log("we are running on the client");
-} else {
-  console.log("we are running on the server");
-}
 
 export { container, TodoList, projectArray };
