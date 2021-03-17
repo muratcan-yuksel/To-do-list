@@ -30,7 +30,7 @@ let TodoList = [
 ];
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
-const projectArray = {};
+let projectArray = {};
 
 //container Div
 const container = () => {
@@ -63,15 +63,24 @@ addDivsForProjects();
 window.onload = displayHome();
 window.onload = displayProjects();
 window.onload = localDropDown;
-
+//create a swapping function so that you won't lose your stored todos in every new session
 let savedList = JSON.parse(localStorage.getItem("TodoList"));
-function swap() {
+function swapTodoList() {
   let temp;
   temp = TodoList;
   TodoList = savedList;
   savedList = temp;
 }
-window.onload = swap();
+window.onload = swapTodoList();
+// do the same for the projects
+let savedProjects = JSON.parse(localStorage.getItem("projectArray"));
+function swapProjects() {
+  let temp;
+  temp = projectArray;
+  projectArray = savedProjects;
+  savedProjects = temp;
+}
+window.onload = swapProjects();
 
 function setStorage() {
   //   console.log("one, two");
