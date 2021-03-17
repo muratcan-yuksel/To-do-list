@@ -106,12 +106,12 @@ const addDivs = () => {
         );
         //remove that index
         projectArray[project].splice(index, 1);
-        localStorage.setItem("projectArray", JSON.stringify(projectArray));
+        //localStorage.setItem("projectArray", JSON.stringify(projectArray));
       }
     }
   })();
   //added this one here from index.js/ can be changed dunno
-  // localStorage.setItem("projectArray", JSON.stringify(projectArray));
+  // //localStorage.setItem("projectArray", JSON.stringify(projectArray));
 };
 //add projects to the side bar
 const addProjects = (() => {
@@ -130,7 +130,7 @@ const addProjects = (() => {
     let projectPush = document.querySelectorAll(".project");
     for (let i = 0; i < projectPush.length; i++) {
       projectArray[projectPush[i].textContent] = [];
-      localStorage.setItem("projectArray", JSON.stringify(projectArray));
+      // //localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
   });
 })();
@@ -176,8 +176,9 @@ const addDivsForProjects = () => {
         console.log(element);
         //if the selected projects name corresponds to that of the selected array's...
         if (
-          event.target.textContent === element.project ||
-          event.target.textContent === "Home"
+          //don't display when it's home, because later on home will be displaying EVERYTHING
+          event.target.textContent === element.project &&
+          event.target.textContent != "Home"
         ) {
           //create a container
           const todoContainer = document.createElement("DIV");

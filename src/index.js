@@ -30,6 +30,8 @@ let TodoList = [
 ];
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
+//there's this Home key and an empty array value
+//so that when the user starts blank, they can add something without specifying a project folder
 let projectArray = { Home: [] };
 
 //container Div
@@ -48,6 +50,8 @@ button.addEventListener("click", function () {
   //dunno what's this
   modal.modal2().style.display = "none";
   console.log(projectArray);
+  localStorage.setItem("TodoList", JSON.stringify(TodoList));
+  // localStorage.setItem("projectArray", JSON.stringify(projectArray));
 });
 
 const projectButton = document.querySelector(".addProject");
@@ -71,12 +75,10 @@ function swapTodoList() {
     temp = TodoList;
     TodoList = savedList;
     savedList = temp;
-    //this is so that todolist won't be null on window load
-    // TodoList = [];
-    // temp = savedList;
-    // savedList = TodoList;
-    // TodoList = temp;
+
     console.log(TodoList);
+    console.log(savedList);
+    console.log(JSON.parse(localStorage.getItem("TodoList")));
   }
 }
 window.onload = swapTodoList();
@@ -92,18 +94,12 @@ function swapProjects() {
     //this is so that projectArray won't be null on window load
     // projectArray = {};
     console.log(projectArray);
+    console.log(savedProjects);
+    console.log(JSON.parse(localStorage.getItem("projectArray")));
   }
 }
 window.onload = swapProjects();
 
-function setStorage() {
-  //   console.log("one, two");
-  // setTimeout(setStorage, 1000);
-  //   localStorage.setItem("projectArray", JSON.stringify(projectArray));
-  //   localStorage.setItem("TodoList", JSON.stringify(TodoList));
-  console.log(savedList);
-}
-setStorage();
-
+window.onload = localDropDown();
 window.onload = displayHome();
 export { container, TodoList, projectArray };
