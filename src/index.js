@@ -20,7 +20,7 @@ modalShortCut();
 
 projectModalShortCut();
 //an array that holds the to-dos
-const TodoList = [
+let TodoList = [
   {
     title: "first to-do",
     date: "sometime",
@@ -64,12 +64,21 @@ window.onload = displayHome();
 window.onload = displayProjects();
 window.onload = localDropDown;
 
+let savedList = JSON.parse(localStorage.getItem("TodoList"));
+function swap() {
+  let temp;
+  temp = TodoList;
+  TodoList = savedList;
+  savedList = temp;
+}
+window.onload = swap();
+
 function setStorage() {
-  console.log("one, two");
-  setTimeout(setStorage, 200);
-  localStorage.setItem("projectArray", JSON.stringify(projectArray));
-  localStorage.setItem("TodoList", JSON.stringify(TodoList));
+  //   console.log("one, two");
+  // setTimeout(setStorage, 1000);
+  //   localStorage.setItem("projectArray", JSON.stringify(projectArray));
+  //   localStorage.setItem("TodoList", JSON.stringify(TodoList));
+  console.log(savedList);
 }
 setStorage();
-
 export { container, TodoList, projectArray };

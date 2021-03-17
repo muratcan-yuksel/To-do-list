@@ -39,7 +39,7 @@ const newTodo = (() => {
 
     //save the todoList into local storage
     // if (typeof window !== "undefined") {
-    // localStorage.setItem("TodoList", JSON.stringify(TodoList));
+    localStorage.setItem("TodoList", JSON.stringify(TodoList));
     //   localStorage.setItem("projectArray", JSON.stringify(projectArray));
     // }
 
