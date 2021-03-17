@@ -21,16 +21,16 @@ modalShortCut();
 projectModalShortCut();
 //an array that holds the to-dos
 let TodoList = [
-  {
-    title: "first to-do",
-    date: "sometime",
-    priority: "chill",
-    details: "It's about something",
-  },
+  // {
+  //   title: "first to-do",
+  //   date: "sometime",
+  //   priority: "chill",
+  //   details: "It's about something",
+  // },
 ];
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
-let projectArray = {};
+let projectArray = { Home: [] };
 
 //container Div
 const container = () => {
@@ -80,17 +80,19 @@ function swapTodoList() {
   }
 }
 window.onload = swapTodoList();
-window.onload = displayHome();
+
 // do the same for the projects
 let savedProjects = JSON.parse(localStorage.getItem("projectArray"));
 function swapProjects() {
-  let temp;
-  temp = projectArray;
-  projectArray = savedProjects;
-  savedProjects = temp;
-  //this is so that projectArray won't be null on window load
-  // projectArray = {};
-  console.log(projectArray);
+  if (JSON.parse(localStorage.getItem("projectArray")) != null) {
+    let temp;
+    temp = projectArray;
+    projectArray = savedProjects;
+    savedProjects = temp;
+    //this is so that projectArray won't be null on window load
+    // projectArray = {};
+    console.log(projectArray);
+  }
 }
 window.onload = swapProjects();
 
@@ -102,4 +104,6 @@ function setStorage() {
   console.log(savedList);
 }
 setStorage();
+
+window.onload = displayHome();
 export { container, TodoList, projectArray };
