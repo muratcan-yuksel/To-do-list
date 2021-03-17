@@ -98,6 +98,8 @@ function swapProjects() {
     console.log(JSON.parse(localStorage.getItem("projectArray")));
   }
 }
+
+
 window.onload = swapProjects();
 
 window.onload = localDropDown();
