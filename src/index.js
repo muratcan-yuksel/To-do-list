@@ -7,6 +7,7 @@ import {
   displayHome,
   displayProjects,
   localDropDown,
+  displayHomeButton,
 } from "./createDOM";
 import {
   modal,
@@ -102,6 +103,7 @@ function swapProjects() {
     console.log(JSON.parse(localStorage.getItem("projectArray")));
   }
 }
+
 window.onload = swapProjects();
 
 window.onload = localDropDown();

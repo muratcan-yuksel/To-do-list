@@ -137,6 +137,7 @@ const addProjects = (() => {
     }
   });
 })();
+
 const displayProjects = () => {
   const projectsDiv = document.querySelector("#projects");
   //why's this here?
@@ -176,7 +177,6 @@ const addDivsForProjects = () => {
       console.log(projectArray[project]);
       //so that means I can loop through it with forEach
       projectArray[project].forEach((element, index) => {
-        console.log(element);
         //if the selected projects name corresponds to that of the selected array's...
         if (
           //don't display when it's home, because later on home will be displaying EVERYTHING
@@ -277,14 +277,6 @@ const localDropDown = () => {
 };
 
 const displayHome = () => {
-  //get the projects in the side bar
-  const sideBarProjects = document.getElementById("projects");
-  //create a button named "Home"
-  const homeButton = document.createElement("BUTTON");
-  homeButton.setAttribute("class", "project");
-  homeButton.textContent = "Home";
-  sideBarProjects.appendChild(homeButton);
-  console.log(TodoList);
   for (let project in projectArray) {
     //this is an array
     console.log(projectArray[project]);
@@ -358,27 +350,21 @@ const displayHome = () => {
     });
   }
 };
-//this part might be totally useles
-//won't I already save things with local storage?
-// const displayProjects=()=>{
-//   //get the projects in the side bar
-//   const sideBarProjects= document.getElementById("projects");
-//   //get the div that takes the project names dynamically
-//   const projectsDiv= document.getElementById("projectAddTodo");
-//   for (i=0; i< projectsDiv.length; i++){
-//     const newProject = document.createElement("BUTTON");
-//       newProject.setAttribute("class", "project");
-//        newProject.textContent = getInput.getProjectInput();
 
-//   //     //adds a new project under the projects div on click
-//   // button.addEventListener("click", function (e) {
-//   //   const newProject = document.createElement("BUTTON");
-//   //   newProject.setAttribute("class", "project");
-//   //   newProject.textContent = getInput.getProjectInput();
-//   //   //projectArray.push([getInput.getProjectInput()]);
-//   //   projectsDiv.appendChild(newProject);
-//   }
-// }
+const displayHomeButton = (() => {
+  //get the projects in the side bar
+  const sideBarProjects = document.getElementById("projects");
+  //create a button named "Home"
+  const homeButton = document.createElement("BUTTON");
+  homeButton.setAttribute("class", "project");
+  homeButton.textContent = "Home";
+  sideBarProjects.appendChild(homeButton);
+
+  homeButton.addEventListener("click", function (e) {
+    alert("oyh");
+  });
+})();
+
 export {
   getInput,
   addDivs,
@@ -388,4 +374,5 @@ export {
   displayHome,
   displayProjects,
   localDropDown,
+  displayHomeButton,
 };
