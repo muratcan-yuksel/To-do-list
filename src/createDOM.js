@@ -78,38 +78,38 @@ const addDivs = () => {
   deleteButton.setAttribute("class", "todoDelete");
   todoContainer.appendChild(deleteButton);
   //a deleteing module to keep things just a bit tidier
-  // const deleteModule = (() => {
-  //   //add an event listener to the delete button
-  //   //so that it can delete the todo from the DOM
-  //   deleteButton.addEventListener("click", initRemoveButton, false);
-  //   //delete its parent element
-  //   function initRemoveButton() {
-  //     this.parentNode.parentNode.removeChild(this.parentNode);
-  //     console.log(TodoList);
-  //     //the below function finds the deleted todo's index in the array, and removes it
-  //     // I couldn't think of a way to implement this in the creaTodo.js
-  //     let index = TodoList.findIndex(
-  //       (obj) =>
-  //         obj.title === title.textContent && obj.details === details.textContent
-  //     );
-  //     //remove that index
-  //     TodoList.splice(index, 1);
-  //     localStorage.setItem("TodoList", JSON.stringify(TodoList));
+  const deleteModule = (() => {
+    //add an event listener to the delete button
+    //so that it can delete the todo from the DOM
+    deleteButton.addEventListener("click", initRemoveButton, false);
+    //delete its parent element
+    function initRemoveButton() {
+      this.parentNode.parentNode.removeChild(this.parentNode);
+      console.log(TodoList);
+      //the below function finds the deleted todo's index in the array, and removes it
+      // I couldn't think of a way to implement this in the creaTodo.js
+      let index = TodoList.findIndex(
+        (obj) =>
+          obj.title === title.textContent && obj.details === details.textContent
+      );
+      //remove that index
+      TodoList.splice(index, 1);
+      localStorage.setItem("TodoList", JSON.stringify(TodoList));
 
-  //     //this function deletes the same element from the created array in projectArray object too
-  //     for (let project in projectArray) {
-  //       // console.log("new thing " + projectArray[project]);
-  //       let index = projectArray[project].findIndex(
-  //         (obj) =>
-  //           obj.title === title.textContent &&
-  //           obj.details === details.textContent
-  //       );
-  //       //remove that index
-  //       projectArray[project].splice(index, 1);
-  //       //localStorage.setItem("projectArray", JSON.stringify(projectArray));
-  //     }
-  //   }
-  // })();
+      //this function deletes the same element from the created array in projectArray object too
+      for (let project in projectArray) {
+        // console.log("new thing " + projectArray[project]);
+        let index = projectArray[project].findIndex(
+          (obj) =>
+            obj.title === title.textContent &&
+            obj.details === details.textContent
+        );
+        //remove that index
+        projectArray[project].splice(index, 1);
+        //localStorage.setItem("projectArray", JSON.stringify(projectArray));
+      }
+    }
+  })();
   //added this one here from index.js/ can be changed dunno
   // //localStorage.setItem("projectArray", JSON.stringify(projectArray));
 };
@@ -223,28 +223,28 @@ const addDivsForProjects = () => {
           //create an event listener on the delete button
           deleteButton.addEventListener("click", initRemoveButton, false);
           //deleting function
-          // function initRemoveButton() {
-          //   this.parentNode.parentNode.removeChild(this.parentNode);
-          //   //find the index that contains the title and details related to the delete button
-          //   //look for the index in the selected array that contains the object that corresponds to the delete button's indication
-          //   index = projectArray[project].findIndex(
-          //     (obj) =>
-          //       obj.title === element.title && obj.details === element.details
-          //   );
-          //   //remove that index
-          //   projectArray[project].splice(index, 1);
-          //   //do the same for the general TodoList array
-          //   index = TodoList.findIndex(
-          //     (obj) =>
-          //       obj.title === element.title && obj.details === element.details
-          //   );
-          //   //remove that index
-          //   TodoList.splice(index, 1);
+          function initRemoveButton() {
+            this.parentNode.parentNode.removeChild(this.parentNode);
+            //find the index that contains the title and details related to the delete button
+            //look for the index in the selected array that contains the object that corresponds to the delete button's indication
+            index = projectArray[project].findIndex(
+              (obj) =>
+                obj.title === element.title && obj.details === element.details
+            );
+            //remove that index
+            projectArray[project].splice(index, 1);
+            //do the same for the general TodoList array
+            index = TodoList.findIndex(
+              (obj) =>
+                obj.title === element.title && obj.details === element.details
+            );
+            //remove that index
+            TodoList.splice(index, 1);
 
-          //   console.log(TodoList);
-          //   // console.log(JSON.parse(localStorage.getItem("projectArray")));
-          //   console.log(projectArray[project]);
-          // }
+            // console.log(TodoList);
+            // // console.log(JSON.parse(localStorage.getItem("projectArray")));
+            // console.log(projectArray[project]);
+          }
         }
       });
     }
