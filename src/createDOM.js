@@ -129,11 +129,11 @@ const addProjects = (() => {
     //push the created project as an array inside the projectArray object
     let projectPush = document.querySelectorAll(".project");
     for (let i = 0; i < projectPush.length; i++) {
-      projectArray[projectPush[i].textContent] = [];
-      for (let project in projectArray) {
-        projectArray[project].push(i.textContent);
+      //checks if the project array object contains the textcontent of the i(project name)
+      //because if not, I tried to do sth else which resulted all the previous arrays getting emptied whenever I added a new array
+      if (projectPush[i].textContent in projectArray == false) {
+        projectArray[projectPush[i].textContent] = [];
       }
-      // //localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
   });
 })();
