@@ -361,7 +361,7 @@ const displayHomeButton = (() => {
   sideBarProjects.appendChild(homeButton);
 
   homeButton.addEventListener("click", function (e) {
-    alert("oyh");
+    console.log("why mate why");
   });
 })();
 
