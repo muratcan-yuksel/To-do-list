@@ -64,4 +64,12 @@ window.onload = displayHome();
 window.onload = displayProjects();
 window.onload = localDropDown;
 
+function setStorage() {
+  console.log("one, two");
+  setTimeout(setStorage, 200);
+  localStorage.setItem("projectArray", JSON.stringify(projectArray));
+  localStorage.setItem("TodoList", JSON.stringify(TodoList));
+}
+setStorage();
+
 export { container, TodoList, projectArray };
