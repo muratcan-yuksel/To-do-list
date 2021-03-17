@@ -66,10 +66,19 @@ window.onload = localDropDown;
 //create a swapping function so that you won't lose your stored todos in every new session
 let savedList = JSON.parse(localStorage.getItem("TodoList"));
 function swapTodoList() {
-  let temp;
-  temp = TodoList;
-  TodoList = savedList;
-  savedList = temp;
+  //if the list is null upon pageload, I can't add new todos
+  if (JSON.parse(localStorage.getItem("TodoList")) != null) {
+    let temp;
+    temp = TodoList;
+    TodoList = savedList;
+    savedList = temp;
+    //this is so that todolist won't be null on window load
+    // TodoList = [];
+    // temp = savedList;
+    // savedList = TodoList;
+    // TodoList = temp;
+    console.log(TodoList);
+  }
 }
 window.onload = swapTodoList();
 // do the same for the projects
@@ -79,6 +88,9 @@ function swapProjects() {
   temp = projectArray;
   projectArray = savedProjects;
   savedProjects = temp;
+  //this is so that projectArray won't be null on window load
+  // projectArray = {};
+  console.log(projectArray);
 }
 window.onload = swapProjects();
 
