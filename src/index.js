@@ -60,7 +60,6 @@ projectButton.addEventListener("click", function () {
 
 addDivsForProjects();
 
-window.onload = displayHome();
 window.onload = displayProjects();
 window.onload = localDropDown;
 //create a swapping function so that you won't lose your stored todos in every new session
@@ -81,6 +80,7 @@ function swapTodoList() {
   }
 }
 window.onload = swapTodoList();
+window.onload = displayHome();
 // do the same for the projects
 let savedProjects = JSON.parse(localStorage.getItem("projectArray"));
 function swapProjects() {
