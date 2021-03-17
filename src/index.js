@@ -76,6 +76,10 @@ function swapTodoList() {
     TodoList = savedList;
     savedList = temp;
 
+    // temp = savedList;
+    // savedList = TodoList;
+    // TodoList = temp;
+
     console.log(TodoList);
     console.log(savedList);
     console.log(JSON.parse(localStorage.getItem("TodoList")));
@@ -98,15 +102,9 @@ function swapProjects() {
     console.log(JSON.parse(localStorage.getItem("projectArray")));
   }
 }
-function foo() {
-  for (let project in projectArray) {
-    console.log(projectArray[project]);
-    console.log(project);
-  }
-}
-window.onload = foo();
 window.onload = swapProjects();
 
 window.onload = localDropDown();
 window.onload = displayHome();
+
 export { container, TodoList, projectArray };

@@ -240,10 +240,11 @@ const addDivsForProjects = () => {
             );
             //remove that index
             TodoList.splice(index, 1);
-
-            // console.log(TodoList);
+            localStorage.setItem("TodoList", JSON.stringify(TodoList));
+            console.log(TodoList);
             // // console.log(JSON.parse(localStorage.getItem("projectArray")));
-            // console.log(projectArray[project]);
+            console.log(projectArray);
+            localStorage.setItem("projectArray", JSON.stringify(projectArray));
           }
         }
       });
@@ -323,19 +324,14 @@ const displayHome = () => {
   //     this.parentNode.parentNode.removeChild(this.parentNode);
   //     //find the index that contains the title and details related to the delete button
   //     //look for the index in the selected array that contains the object that corresponds to the delete button's indication
-  //     // for (let project in JSON.parse(localStorage.getItem("projectArray"))) {
-  //     //   index = JSON.parse(localStorage.getItem("projectArray"))[
-  //     //     project
-  //     //   ].findIndex(
-  //     //     (obj) =>
-  //     //       obj.title === element.title && obj.details === element.details
-  //     //   );
-  //     //   //remove that index
-  //     //   JSON.parse(localStorage.getItem("projectArray"))[project].splice(
-  //     //     index,
-  //     //     1
-  //     //   );
-  //     // }
+  //     for (let project in projectArray) {
+  //       index = projectArray[project].findIndex(
+  //         (obj) =>
+  //           obj.title === element.title && obj.details === element.details
+  //       );
+  //       //remove that index
+  //       projectArray[project].splice(index, 1);
+  //     }
   //     // here it doesn't really remove the item
   //     //do the same for the general TodoList array
   //     index = TodoList.findIndex(
@@ -345,6 +341,8 @@ const displayHome = () => {
   //     TodoList.splice(index, 1);
   //     //and save it to the local storage
   //     localStorage.setItem("TodoList", JSON.stringify(TodoList));
+  //     console.log(TodoList);
+  //     console.log(projectArray);
   //   }
   // });
 };
