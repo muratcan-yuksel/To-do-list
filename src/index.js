@@ -15,6 +15,7 @@ import {
   projectModalShortCut,
 } from "./modal";
 import { addDivs } from "./addDivs";
+import { addProjects } from "./addProjects";
 //calls the modal logic from modal.js
 modalShortCut();
 
