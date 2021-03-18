@@ -2,6 +2,8 @@ import { Todo, newTodo } from "./createTodo";
 import { container, TodoList, projectArray } from "./index";
 import { getInput } from "./getInput";
 import { addDivs } from "./addDivs";
+import { displayProjects } from "./displayProjects";
+import { addDivsForProjects } from "./addDivsForProjects";
 
 //add projects to the side bar
 const addProjects = (() => {

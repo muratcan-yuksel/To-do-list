@@ -1,17 +1,18 @@
 import { Todo, newTodo } from "./createTodo";
-import { getInput, displayHomeButton } from "./getInput";
-import {
-  modal,
-  modalShortCut,
-  addProject,
-  projectModalShortCut,
-} from "./modal";
+import { getInput } from "./getInput";
 import { addDivs } from "./addDivs";
 import { addProjects } from "./addProjects";
 import { displayProjects } from "./displayProjects";
 import { addDivsForProjects } from "./addDivsForProjects";
 import { addDropDown, localDropDown } from "./dropDown";
 import { displayHome } from "./displayHome";
+import { displayHomeButton } from "./homeButton";
+import {
+  modal,
+  modalShortCut,
+  addProject,
+  projectModalShortCut,
+} from "./modal";
 
 //calls the modal logic from modal.js
 modalShortCut();
@@ -73,10 +74,6 @@ function swapTodoList() {
     temp = TodoList;
     TodoList = savedList;
     savedList = temp;
-
-    // temp = savedList;
-    // savedList = TodoList;
-    // TodoList = temp;
 
     console.log(TodoList);
     console.log(savedList);
