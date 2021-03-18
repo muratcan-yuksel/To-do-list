@@ -1,6 +1,10 @@
 import { Todo, newTodo } from "./createTodo";
 import { container, TodoList, projectArray } from "./index";
 import { getInput } from "./getInput";
+import { addProjects } from "./addProjects";
+import { addDivs } from "./addDivs";
+import { addDivsForProjects } from "./addDivsForProjects";
+import { addDropDown, localDropDown } from "./dropDown";
 
 const displayProjects = () => {
   const projectsDiv = document.querySelector("#projects");

@@ -4,6 +4,8 @@ import { getInput } from "./getInput";
 import { addProjects } from "./addProjects";
 import { addDivs } from "./addDivs";
 import { displayProjects } from "./displayProjects";
+import { addDropDown, localDropDown } from "./dropDown";
+
 
 const addDivsForProjects = () => {
   //now an event listener
