@@ -23,6 +23,25 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(11, 1fr);
 }
+#projects {
+  justify-self: center;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+}
+.project {
+  background: none;
+  border: 1px solid black;
+  padding: 0.3em;
+  background-color: rgb(108, 138, 108);
+  margin: 0.2em;
+}
+
+#homeButton {
+  background-color: cornflowerblue;
+  grid-row: 9/10;
+  grid-column: 1/3;
+}
 #myBtn {
   grid-row: 10/12;
   grid-column: 2/3;
@@ -185,8 +204,4 @@ body {
 #addProject {
   grid-row: 8/8;
   grid-column: 4;
-}
-.project {
-  background: none;
-  border: none;
 }
