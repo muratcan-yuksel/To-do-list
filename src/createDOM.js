@@ -357,8 +357,11 @@ const displayHomeButton = (() => {
   //create a button named "Home"
   const homeButton = document.createElement("BUTTON");
   homeButton.setAttribute("class", "project");
+  homeButton.setAttribute("id", "homeButton");
   homeButton.textContent = "Home";
   sideBarProjects.appendChild(homeButton);
+  //element.parentNode.insertBefore(newElement, element.nextSibling);
+
   homeButton.addEventListener("click", function (e) {
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     for (let project in projectArray) {
