@@ -180,9 +180,11 @@ const addDivsForProjects = () => {
         //if the selected projects name corresponds to that of the selected array's...
         if (
           //don't display when it's home, because later on home will be displaying EVERYTHING
-          event.target.textContent === element.project &&
-          event.target.textContent != "Home"
+          event.target.textContent ===
+          element.project /*&&
+          event.target.textContent !== "Home"*/
         ) {
+          console.log("w0t");
           //create a container
           const todoContainer = document.createElement("DIV");
           //give it a classname
@@ -351,18 +353,17 @@ const displayHome = () => {
 
 const displayHomeButton = (() => {
   //get the projects in the side bar
-  const sideBarProjects = document.getElementById("projects");
+  const sideBarProjects = document.getElementById("sideBar");
   //create a button named "Home"
   const homeButton = document.createElement("BUTTON");
   homeButton.setAttribute("class", "project");
   homeButton.textContent = "Home";
   sideBarProjects.appendChild(homeButton);
-
   homeButton.addEventListener("click", function (e) {
+    document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     for (let i = 0; i < TodoList.length; i++) {
       console.log("why mate why");
       console.log(TodoList[i]);
-
       //create a container
       const todoContainer = document.createElement("DIV");
       //give it a classname
@@ -380,23 +381,18 @@ const displayHomeButton = (() => {
       checkBox.setAttribute("type", "checkbox");
       checkBox.setAttribute("class", "todoCheck");
       todoContainer.appendChild(checkBox);
-
       title.textContent = TodoList[i].title;
       title.setAttribute("class", "todoTitle");
       todoContainer.appendChild(title);
-
       details.textContent = TodoList[i].details;
       details.setAttribute("class", "todoDetails");
       todoContainer.appendChild(details);
-
       date.innerHTML = TodoList[i].date;
       date.setAttribute("class", "todoDate");
       todoContainer.appendChild(date);
-
       priority.innerHTML = TodoList[i].priority;
       priority.setAttribute("class", "todoPriority");
       todoContainer.appendChild(priority);
-
       deleteButton.textContent = "DELETE";
       deleteButton.setAttribute("class", "todoDelete");
       todoContainer.appendChild(deleteButton);
