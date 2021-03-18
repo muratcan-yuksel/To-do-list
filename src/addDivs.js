@@ -1,7 +1,9 @@
 import { Todo, newTodo } from "./createTodo";
 import { container, TodoList, projectArray } from "./index";
+import { getInput } from "./createDOM";
 
-const addDivsOnClick = () => {
+//creates Divs and writes the user input into the DOM
+const addDivs = () => {
   //create a todo container
   //the reason to do this is to be able to delete a singular to do element
   const todoContainer = document.createElement("DIV");
@@ -21,26 +23,25 @@ const addDivsOnClick = () => {
   checkBox.setAttribute("class", "todoCheck");
   todoContainer.appendChild(checkBox);
 
-  title.textContent = TodoList[TodoList.length - 1].title;
+  title.textContent = getInput.getTitle();
   title.setAttribute("class", "todoTitle");
   todoContainer.appendChild(title);
 
-  details.textContent = TodoList[TodoList.length - 1].details;
+  details.textContent = getInput.getDetails();
   details.setAttribute("class", "todoDetails");
   todoContainer.appendChild(details);
 
-  date.innerHTML = TodoList[TodoList.length - 1].date;
+  date.innerHTML = getInput.getDate();
   date.setAttribute("class", "todoDate");
   todoContainer.appendChild(date);
 
-  priority.innerHTML = TodoList[TodoList.length - 1].priority;
+  priority.innerHTML = getInput.getPriority();
   priority.setAttribute("class", "todoPriority");
   todoContainer.appendChild(priority);
 
   deleteButton.textContent = "DELETE";
   deleteButton.setAttribute("class", "todoDelete");
   todoContainer.appendChild(deleteButton);
-
   //a deleteing module to keep things just a bit tidier
   const deleteModule = (() => {
     //add an event listener to the delete button
@@ -58,6 +59,7 @@ const addDivsOnClick = () => {
       );
       //remove that index
       TodoList.splice(index, 1);
+      localStorage.setItem("TodoList", JSON.stringify(TodoList));
 
       //this function deletes the same element from the created array in projectArray object too
       for (let project in projectArray) {
@@ -69,9 +71,12 @@ const addDivsOnClick = () => {
         );
         //remove that index
         projectArray[project].splice(index, 1);
+        //localStorage.setItem("projectArray", JSON.stringify(projectArray));
       }
     }
   })();
+  //added this one here from index.js/ can be changed dunno
+  // //localStorage.setItem("projectArray", JSON.stringify(projectArray));
 };
 
-export { addDivsOnClick };
+export { addDivs };
