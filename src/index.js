@@ -7,7 +7,7 @@ import {
   displayProjects,
   localDropDown,
   displayHomeButton,
-} from "./createDOM";
+} from "./getInput";
 import {
   modal,
   modalShortCut,

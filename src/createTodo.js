@@ -1,4 +1,4 @@
-import { getInput } from "./createDOM";
+import { getInput } from "./getInput";
 import { TodoList, projectArray } from "./index";
 //Todo class
 class Todo {

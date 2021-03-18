@@ -1,6 +1,6 @@
 import { Todo, newTodo } from "./createTodo";
 import { container, TodoList, projectArray } from "./index";
-import { getInput } from "./createDOM";
+import { getInput } from "./getInput";
 
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
