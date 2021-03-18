@@ -1,7 +1,6 @@
 import { Todo, newTodo } from "./createTodo";
 import {
   getInput,
-  addDivsForProjects,
   addDropDown,
   displayHome,
   localDropDown,
@@ -16,6 +15,7 @@ import {
 import { addDivs } from "./addDivs";
 import { addProjects } from "./addProjects";
 import { displayProjects } from "./displayProjects";
+import { addDivsForProjects } from "./addDivsForProjects";
 //calls the modal logic from modal.js
 modalShortCut();
 
