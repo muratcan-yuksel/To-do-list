@@ -4,7 +4,6 @@ import {
   addDivsForProjects,
   addDropDown,
   displayHome,
-  displayProjects,
   localDropDown,
   displayHomeButton,
 } from "./getInput";
@@ -16,6 +15,7 @@ import {
 } from "./modal";
 import { addDivs } from "./addDivs";
 import { addProjects } from "./addProjects";
+import { displayProjects } from "./displayProjects";
 //calls the modal logic from modal.js
 modalShortCut();
 

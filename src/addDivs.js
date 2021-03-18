@@ -1,7 +1,8 @@
 import { Todo, newTodo } from "./createTodo";
 import { container, TodoList, projectArray } from "./index";
 import { getInput } from "./getInput";
-
+import { displayProjects } from "./displayProjects";
+import { addProjects } from "./addProjects";
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
   //create a todo container
