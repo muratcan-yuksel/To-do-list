@@ -399,25 +399,26 @@ const displayHomeButton = (() => {
       //create an event listener on the delete button
       deleteButton.addEventListener("click", initRemoveButton, false);
       for (let project in projectArray) {
-        //deleting function
-        function initRemoveButton() {
-          this.parentNode.parentNode.removeChild(this.parentNode);
-          //find the index that contains the title and details related to the delete button
-          //look for the index in the selected array that contains the object that corresponds to the delete button's indication
-          index = projectArray[project].findIndex(
-            (obj) =>
-              obj.title === TodoList[i].title &&
-              obj.details === TodoList[i].details
-          );
-          //remove that index
-          projectArray[project].splice(index, 1);
-          //do the same for the general TodoList array
-          index = TodoList.findIndex(
-            (obj) =>
-              obj.title === TodoList[i].title &&
-              obj.details === TodoList[i].details
-          );
-        }
+      }
+      //deleting function
+      function initRemoveButton() {
+        this.parentNode.parentNode.removeChild(this.parentNode);
+        //find the index that contains the title and details related to the delete button
+        //look for the index in the selected array that contains the object that corresponds to the delete button's indication
+        index = projectArray[project].findIndex(
+          (obj) =>
+            obj.title === TodoList[i].title &&
+            obj.details === TodoList[i].details
+        );
+        //remove that index
+        projectArray[project].splice(index, 1);
+        //do the same for the general TodoList array
+        index = TodoList.findIndex(
+          (obj) =>
+            obj.title === TodoList[i].title &&
+            obj.details === TodoList[i].details
+        );
+
         //remove that index
         TodoList.splice(index, 1);
         localStorage.setItem("TodoList", JSON.stringify(TodoList));
