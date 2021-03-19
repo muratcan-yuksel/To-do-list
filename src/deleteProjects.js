@@ -27,19 +27,31 @@ const deleteProjects = () => {
           sideName.textContent === project &&
           projectArray[project].length === 0
         ) {
-          //   alert("tru fam");
           sideName.addEventListener("click", (event) => {
             //this one is so that what I create won't repeat itself on each click
             document
               .querySelectorAll(".projectDelete")
               .forEach((e) => e.remove());
-            console.log("side");
             //create a container
-            const projectDelete = document.createElement("DIV");
+            const projectDelete = document.createElement("BUTTON");
             //give it a classname
             projectDelete.setAttribute("class", "projectDelete");
             container().appendChild(projectDelete);
             projectDelete.textContent = "Delete this project";
+            //an event listener for the delete button
+            projectDelete.addEventListener("click", (e) => {
+              //remove the project name on the side bar
+              sideName.remove();
+              //remove the project from the project array
+              delete projectArray[project];
+              console.log(project);
+              console.log(projectArray);
+              //save it to the local storage
+              localStorage.setItem(
+                "projectArray",
+                JSON.stringify(projectArray)
+              );
+            });
           });
         } else if (
           //if the array is not empty, delete the created "delete this project" thingy
