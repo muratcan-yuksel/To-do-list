@@ -66,20 +66,6 @@ const deleteProjects = () => {
       }
     }
   });
-
-  //   for (let i = 0; i < projects.length; i++) {
-  //     console.log("but this? " + projects.length);
-  //     console.log(projects);
-  //   }
-  // //add an event listener to the buttons on the sidebar
-  //   wrapper.addEventListener("click", (event) => {
-  //       //but only if it's a button that we're clicking on
-  //     const isButton = event.target.nodeName === "BUTTON";
-  //     if (!isButton) {
-  //       return;
-  //     }
-
-  //   });
 };
 
 export { deleteProjects };
