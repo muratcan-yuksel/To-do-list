@@ -202,3 +202,7 @@ body {
   grid-row: 8/8;
   grid-column: 4;
 }
+.projectDelete {
+  grid-column: 5/8;
+  grid-row: 8/9;
+}
