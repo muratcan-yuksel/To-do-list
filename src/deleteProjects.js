@@ -25,7 +25,7 @@ const deleteProjects = () => {
           sideName.textContent === project &&
           projectArray[project].length === 0
         ) {
-          alert("tru fam");
+          //   alert("tru fam");
         }
       }
     }
