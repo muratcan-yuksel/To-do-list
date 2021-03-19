@@ -17,8 +17,6 @@ import {
 
 //calls the modal logic from modal.js
 modalShortCut();
-//delet projects
-deleteProjects();
 
 projectModalShortCut();
 //an array that holds the to-dos
@@ -105,5 +103,8 @@ window.onload = swapProjects();
 
 window.onload = localDropDown();
 window.onload = displayHome();
+
+//delete projects
+deleteProjects();
 
 export { container, TodoList, projectArray };
