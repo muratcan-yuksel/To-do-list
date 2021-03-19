@@ -7,6 +7,7 @@ import { addDivsForProjects } from "./addDivsForProjects";
 import { addDropDown, localDropDown } from "./dropDown";
 import { displayHome } from "./displayHome";
 import { displayHomeButton } from "./homeButton";
+import { deleteProjects } from "./deleteProjects";
 import {
   modal,
   modalShortCut,
@@ -16,6 +17,8 @@ import {
 
 //calls the modal logic from modal.js
 modalShortCut();
+//delet projects
+deleteProjects();
 
 projectModalShortCut();
 //an array that holds the to-dos

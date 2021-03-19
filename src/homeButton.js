@@ -7,6 +7,7 @@ import { displayProjects } from "./displayProjects";
 import { addDivsForProjects } from "./addDivsForProjects";
 import { addDropDown, localDropDown } from "./dropDown";
 import { displayHome } from "./displayHome";
+import { deleteProjects } from "./deleteProjects";
 
 const displayHomeButton = (() => {
   //get the projects in the side bar

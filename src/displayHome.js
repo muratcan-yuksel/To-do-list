@@ -6,6 +6,7 @@ import { addDivs } from "./addDivs";
 import { displayProjects } from "./displayProjects";
 import { addDivsForProjects } from "./addDivsForProjects";
 import { addDropDown, localDropDown } from "./dropDown";
+import { deleteProjects } from "./deleteProjects";
 
 const displayHome = () => {
   for (let project in projectArray) {

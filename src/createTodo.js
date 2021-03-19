@@ -1,5 +1,7 @@
 import { getInput } from "./getInput";
 import { TodoList, projectArray } from "./index";
+import { deleteProjects } from "./deleteProjects";
+
 //Todo class
 class Todo {
   constructor(title, date, priority, details, project) {

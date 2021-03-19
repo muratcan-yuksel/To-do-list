@@ -6,7 +6,6 @@ import { addDivs } from "./addDivs";
 import { displayProjects } from "./displayProjects";
 import { addDropDown, localDropDown } from "./dropDown";
 
-
 const addDivsForProjects = () => {
   //now an event listener
   //will first delete .todoContainer
@@ -40,7 +39,6 @@ const addDivsForProjects = () => {
           element.project /*&&
             event.target.textContent !== "Home"*/
         ) {
-          console.log("w0t");
           //create a container
           const todoContainer = document.createElement("DIV");
           //give it a classname
