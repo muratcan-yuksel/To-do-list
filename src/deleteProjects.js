@@ -69,16 +69,3 @@ const deleteProjects = () => {
 };
 
 export { deleteProjects };
-
-// sideName.addEventListener("click", (event) => {
-//     console.log("side");
-//     //create a container
-//     const projectDeleteContainer = document.createElement("DIV");
-//     //give it a classname
-//     projectDeleteContainer.setAttribute("class", "projectDelete");
-//     //append it to the container from index.js
-//     container().appendChild(projectDeleteContainer);
-//     const projectDelete = document.createElement("DIV");
-//     projectDeleteContainer.appendChild(projectDelete);
-//     projectDelete.textContent = "Delete this project";
-//   });

@@ -106,5 +106,4 @@ window.onload = displayHome();
 
 //delete projects
 deleteProjects();
-
 export { container, TodoList, projectArray };
