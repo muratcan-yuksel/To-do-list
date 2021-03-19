@@ -73,6 +73,11 @@ const addDivs = () => {
       projectArray[project].splice(index, 1);
       //localStorage.setItem("projectArray", JSON.stringify(projectArray));
     }
+    localStorage.setItem("TodoList", JSON.stringify(TodoList));
+    console.log(TodoList);
+    // // console.log(JSON.parse(localStorage.getItem("projectArray")));
+    console.log(projectArray);
+    localStorage.setItem("projectArray", JSON.stringify(projectArray));
   }
 
   //added this one here from index.js/ can be changed dunno
