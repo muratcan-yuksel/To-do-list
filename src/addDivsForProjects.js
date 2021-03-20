@@ -51,7 +51,6 @@ const addDivsForProjects = () => {
           const title = document.createElement("DIV");
           const details = document.createElement("DIV");
           const toolTip = document.createElement("SPAN");
-
           const date = document.createElement("DIV");
           const priority = document.createElement("DIV");
           const deleteButton = document.createElement("BUTTON");
