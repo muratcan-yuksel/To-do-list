@@ -57,6 +57,7 @@ button.addEventListener("click", function () {
 const projectButton = document.querySelector(".addProject");
 projectButton.addEventListener("click", function () {
   //I have no idea what is this. Forgotten already.
+  //prolly this one is to close the modal
   addProject.modal2().style.display = "none";
   //call the dropdown menu project creating function
   addDropDown();
