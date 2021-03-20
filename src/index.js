@@ -14,6 +14,7 @@ import {
   addProject,
   projectModalShortCut,
 } from "./modal";
+import { format, compareAsc } from "date-fns";
 
 //calls the modal logic from modal.js
 modalShortCut();

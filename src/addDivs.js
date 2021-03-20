@@ -3,6 +3,7 @@ import { container, TodoList, projectArray } from "./index";
 import { getInput } from "./getInput";
 import { displayProjects } from "./displayProjects";
 import { addProjects } from "./addProjects";
+import { format, compareAsc } from "date-fns";
 
 //creates Divs and writes the user input into the DOM
 const addDivs = () => {
@@ -39,7 +40,9 @@ const addDivs = () => {
   toolTip.setAttribute("class", "toolTipText");
   details.appendChild(toolTip);
 
-  date.innerHTML = TodoList[TodoList.length - 1].date;
+  const format = require("date-fns/format");
+  let test = new Date(TodoList[TodoList.length - 1].date);
+  date.innerHTML = format(test, "MMMM dd, yyyy");
   date.setAttribute("class", "todoDate");
   todoContainer.appendChild(date);
 
