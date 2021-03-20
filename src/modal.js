@@ -82,7 +82,7 @@ const projectModalShortCut = () => {
 
 const editTodo = (() => {
   // Get the modal
-  var modal = document.getElementById("myModal");
+  var modal = document.getElementById("myModal3");
   //this will be used in index js directly to close the window on to do add
   var modal2 = () => {
     return document.getElementById("myModal");
@@ -116,18 +116,13 @@ const editTodo = (() => {
       }
     };
   };
-  const fire = () => {
-    btn.addEventListener("click", function () =>{
-      console.log("fire");
-    }
-  };
 
-  return { btnClick, spanClick, windowClick, modal2, fire };
+  return { btnClick, spanClick, windowClick, modal2 };
 })();
 
 const editShortCut = () => {
   editTodo.btnClick();
-  editTodo.fire();
+
   editTodo.spanClick();
 
   editTodo.windowClick();
