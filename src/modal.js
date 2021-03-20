@@ -116,13 +116,18 @@ const editTodo = (() => {
       }
     };
   };
+  const fire = () => {
+    btn.addEventListener("click", function () =>{
+      console.log("fire");
+    }
+  };
 
-  return { btnClick, spanClick, windowClick, modal2 };
+  return { btnClick, spanClick, windowClick, modal2, fire };
 })();
 
 const editShortCut = () => {
   editTodo.btnClick();
-
+  editTodo.fire();
   editTodo.spanClick();
 
   editTodo.windowClick();

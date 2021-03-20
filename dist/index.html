@@ -73,7 +73,32 @@
     
     
     -->
-   
+    <!--Modal for editing to-dos-->
+    <div id="myModal3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Add To-do</h2>
+        </div>
+          <input id="title" type="text">
+            <textarea id="details" name="comment">Add your comment here</textarea>
+              <label
+               id="dueDate" >Due Date
+            <input type="date" id="date" value="2021-08-03" >
+          </label>
+          <label id="radioButtons"> Priority
+            <div>
+              <input type="radio" class="radio" name="priority" value="Low" checked> Low
+              <input type="radio" class="radio" name="priority" value="Medium"> Medium
+              <input type="radio" class="radio" name="priority" value="High"> High
+        </div>
+      </label>
+      <select id="projectAddTodo" name="projects" >
+        <!--<option value="home" id="home">Home</option>-->
+      </select>
+        <button id="addTodo" class="addTodo">Add Todo</button>
+      </div>
 
 
 
