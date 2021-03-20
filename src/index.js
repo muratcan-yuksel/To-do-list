@@ -13,12 +13,16 @@ import {
   modalShortCut,
   addProject,
   projectModalShortCut,
+  editShortCut,
+  editTodo,
 } from "./modal";
 
 //calls the modal logic from modal.js
 modalShortCut();
 
 projectModalShortCut();
+
+editShortCut();
 //an array that holds the to-dos
 let TodoList = [
   // {
