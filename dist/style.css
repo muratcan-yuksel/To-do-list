@@ -72,6 +72,7 @@ body {
 
 .todoDate {
   grid-column: 8/9;
+  padding-right: 1em;
 }
 .todoPriority {
   grid-column: 9/10;
