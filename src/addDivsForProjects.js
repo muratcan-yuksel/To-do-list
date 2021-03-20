@@ -5,6 +5,7 @@ import { addProjects } from "./addProjects";
 import { addDivs } from "./addDivs";
 import { displayProjects } from "./displayProjects";
 import { addDropDown, localDropDown } from "./dropDown";
+import { format, compareAsc } from "date-fns";
 
 const addDivsForProjects = () => {
   //now an event listener
