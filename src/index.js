@@ -21,14 +21,7 @@ modalShortCut();
 
 projectModalShortCut();
 //an array that holds the to-dos
-let TodoList = [
-  // {
-  //   title: "first to-do",
-  //   date: "sometime",
-  //   priority: "chill",
-  //   details: "It's about something",
-  // },
-];
+let TodoList = [];
 //object that contains all the project arrays
 //I'll use this object to display all the saved projects later on
 //there's this Home key and an empty array value
