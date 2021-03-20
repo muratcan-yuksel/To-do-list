@@ -7,6 +7,7 @@ import { displayProjects } from "./displayProjects";
 import { addDivsForProjects } from "./addDivsForProjects";
 import { addDropDown, localDropDown } from "./dropDown";
 import { deleteProjects } from "./deleteProjects";
+import { format, compareAsc } from "date-fns";
 
 const displayHome = () => {
   for (let project in projectArray) {
@@ -45,7 +46,10 @@ const displayHome = () => {
       toolTip.setAttribute("class", "toolTipText");
       details.appendChild(toolTip);
 
-      date.innerHTML = element.date;
+      //format date using date-fns package
+      const format = require("date-fns/format");
+      let test = new Date(element.date);
+      date.innerHTML = format(test, "MMMM dd, yyyy");
       date.setAttribute("class", "todoDate");
       todoContainer.appendChild(date);
 

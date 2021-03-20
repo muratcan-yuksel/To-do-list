@@ -71,7 +71,10 @@ const addDivsForProjects = () => {
           toolTip.setAttribute("class", "toolTipText");
           details.appendChild(toolTip);
 
-          date.innerHTML = element.date;
+          //format date using date-fns package
+          const format = require("date-fns/format");
+          let test = new Date(element.date);
+          date.innerHTML = format(test, "MMMM dd, yyyy");
           date.setAttribute("class", "todoDate");
           todoContainer.appendChild(date);
 

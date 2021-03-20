@@ -40,6 +40,7 @@ const addDivs = () => {
   toolTip.setAttribute("class", "toolTipText");
   details.appendChild(toolTip);
 
+  //format date using date-fns package
   const format = require("date-fns/format");
   let test = new Date(TodoList[TodoList.length - 1].date);
   date.innerHTML = format(test, "MMMM dd, yyyy");
