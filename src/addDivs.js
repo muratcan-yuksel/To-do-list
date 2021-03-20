@@ -15,7 +15,6 @@ const addDivs = () => {
   //append it to the container from index.js
   container().appendChild(todoContainer);
   //Create elements
-  const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
   const toolTip = document.createElement("SPAN");
@@ -24,9 +23,6 @@ const addDivs = () => {
   const priority = document.createElement("DIV");
   const deleteButton = document.createElement("BUTTON");
   // set their attributes for identification and append them to the todo container Div
-  checkBox.setAttribute("type", "checkbox");
-  checkBox.setAttribute("class", "todoCheck");
-  todoContainer.appendChild(checkBox);
 
   title.textContent = TodoList[TodoList.length - 1].title;
   title.setAttribute("class", "todoTitle");
