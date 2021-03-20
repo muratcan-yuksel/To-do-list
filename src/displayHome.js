@@ -43,6 +43,7 @@ const displayHome = () => {
 
       popUp.textContent = element.details;
       popUp.setAttribute("class", "popuptext");
+      popUp.setAttribute("id", "pop-up");
       details.appendChild(popUp);
 
       date.innerHTML = element.date;
