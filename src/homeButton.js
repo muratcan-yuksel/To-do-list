@@ -22,6 +22,8 @@ const displayHomeButton = (() => {
   //element.parentNode.insertBefore(newElement, element.nextSibling);
 
   homeButton.addEventListener("click", function (e) {
+    //all the projects displayed on the page will be deleted
+    document.querySelectorAll(".projectDelete").forEach((e) => e.remove());
     document.querySelectorAll(".todoContainer").forEach((e) => e.remove());
     for (let project in projectArray) {
       //this is an array
