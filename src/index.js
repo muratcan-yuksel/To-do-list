@@ -13,16 +13,12 @@ import {
   modalShortCut,
   addProject,
   projectModalShortCut,
-  editShortCut,
-  editTodo,
 } from "./modal";
 
 //calls the modal logic from modal.js
 modalShortCut();
 
 projectModalShortCut();
-
-editShortCut();
 //an array that holds the to-dos
 let TodoList = [
   // {
@@ -111,13 +107,4 @@ window.onload = displayHome();
 
 //delete projects
 deleteProjects();
-//add an event listener to the edit to-do buttons
-
-const editButtons = document.querySelectorAll(".todoDetails");
-//also, so this is how we add an event listener to multiple elements!!!!!!!
-editButtons.forEach((item) => {
-  item.addEventListener("click", function () {
-    console.log("fire");
-  });
-});
 export { container, TodoList, projectArray };
