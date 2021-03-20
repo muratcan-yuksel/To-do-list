@@ -8,6 +8,7 @@ import { addDivsForProjects } from "./addDivsForProjects";
 import { addDropDown, localDropDown } from "./dropDown";
 import { displayHome } from "./displayHome";
 import { deleteProjects } from "./deleteProjects";
+import { format, compareAsc } from "date-fns";
 
 const displayHomeButton = (() => {
   //get the projects in the side bar
@@ -53,7 +54,10 @@ const displayHomeButton = (() => {
         details.setAttribute("class", "todoDetails");
         todoContainer.appendChild(details);
 
-        date.innerHTML = element.date;
+        //format date using date-fns package
+        const format = require("date-fns/format");
+        let test = new Date(element.date);
+        date.innerHTML = format(test, "MMMM dd, yyyy");
         date.setAttribute("class", "todoDate");
         todoContainer.appendChild(date);
 
