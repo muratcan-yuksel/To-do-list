@@ -82,6 +82,7 @@ button {
 
 .todoCheck {
   grid-column: 1;
+  margin-right: 1em;
 }
 .todoTitle {
   grid-column: 2/4;
