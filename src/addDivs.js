@@ -17,6 +17,8 @@ const addDivs = () => {
   const checkBox = document.createElement("INPUT");
   const title = document.createElement("DIV");
   const details = document.createElement("DIV");
+  const toolTip = document.createElement("SPAN");
+
   const date = document.createElement("DIV");
   const priority = document.createElement("DIV");
   const deleteButton = document.createElement("BUTTON");
@@ -29,9 +31,13 @@ const addDivs = () => {
   title.setAttribute("class", "todoTitle");
   todoContainer.appendChild(title);
 
-  details.textContent = TodoList[TodoList.length - 1].details;
+  details.textContent = "Details";
   details.setAttribute("class", "todoDetails");
   todoContainer.appendChild(details);
+
+  toolTip.textContent = TodoList[TodoList.length - 1].details;
+  toolTip.setAttribute("class", "toolTipText");
+  details.appendChild(toolTip);
 
   date.innerHTML = TodoList[TodoList.length - 1].date;
   date.setAttribute("class", "todoDate");

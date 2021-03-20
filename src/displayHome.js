@@ -37,13 +37,12 @@ const displayHome = () => {
       title.setAttribute("class", "todoTitle");
       todoContainer.appendChild(title);
 
-      details.textContent = "Click to see details";
+      details.textContent = "Details";
       details.setAttribute("class", "todoDetails");
       todoContainer.appendChild(details);
 
       toolTip.textContent = element.details;
       toolTip.setAttribute("class", "toolTipText");
-      toolTip.setAttribute("name", "pop-up");
       details.appendChild(toolTip);
 
       date.innerHTML = element.date;
