@@ -22,7 +22,7 @@ const displayHome = () => {
       //append it to the container from index.js
       container().appendChild(todoContainer);
       //Create elements
-      const checkBox = document.createElement("INPUT");
+      const checkBox = document.createElement("BUTTON");
       const title = document.createElement("DIV");
       const details = document.createElement("DIV");
       const toolTip = document.createElement("SPAN");
