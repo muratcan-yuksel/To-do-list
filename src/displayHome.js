@@ -30,6 +30,7 @@ const displayHome = () => {
       const priority = document.createElement("DIV");
       const deleteButton = document.createElement("BUTTON");
       // set their attributes for identification and append them to the todo container Div
+      checkBox.textContent = element.status;
       checkBox.setAttribute("type", "checkbox");
       checkBox.setAttribute("class", "todoCheck");
       todoContainer.appendChild(checkBox);
@@ -86,6 +87,33 @@ const displayHome = () => {
         console.log(projectArray);
         localStorage.setItem("projectArray", JSON.stringify(projectArray));
       }
+      //set attribute for swapping texts on click
+      checkBox.setAttribute("data-text-swap", "Done");
+      checkBox.setAttribute("data-text-original", "Not Done");
+      //function that changes the books read/Notread status on click
+      checkBox.addEventListener("click", function () {}, false);
+
+      checkBox.addEventListener(
+        "click",
+        function () {
+          console.log("checked");
+          if (checkBox.getAttribute("data-text-swap") == checkBox.innerHTML) {
+            checkBox.innerHTML = checkBox.getAttribute("data-text-original");
+          } else {
+            checkBox.setAttribute("data-text-original", checkBox.innerHTML);
+            checkBox.innerHTML = checkBox.getAttribute("data-text-swap");
+          }
+          index = TodoList.findIndex(
+            (obj) =>
+              obj.title === element.title && obj.details === element.details
+          );
+          TodoList[index].status = checkBox.textContent;
+          console.log(TodoList[index]);
+          //update the local storage
+          localStorage.setItem("TodoList", JSON.stringify(TodoList));
+        },
+        false
+      );
     });
   }
 };
