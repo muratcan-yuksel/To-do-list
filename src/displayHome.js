@@ -24,7 +24,6 @@ const displayHome = () => {
       const checkBox = document.createElement("INPUT");
       const title = document.createElement("DIV");
       const details = document.createElement("DIV");
-      const popUp = document.createElement("SPAN");
       const date = document.createElement("DIV");
       const priority = document.createElement("DIV");
       const deleteButton = document.createElement("BUTTON");
@@ -37,14 +36,9 @@ const displayHome = () => {
       title.setAttribute("class", "todoTitle");
       todoContainer.appendChild(title);
 
-      details.textContent = "Click to see details";
+      details.textContent = element.details;
       details.setAttribute("class", "todoDetails");
       todoContainer.appendChild(details);
-
-      popUp.textContent = element.details;
-      popUp.setAttribute("class", "popuptext");
-      popUp.setAttribute("id", "pop-up");
-      details.appendChild(popUp);
 
       date.innerHTML = element.date;
       date.setAttribute("class", "todoDate");

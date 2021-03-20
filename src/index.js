@@ -107,11 +107,4 @@ window.onload = displayHome();
 
 //delete projects
 deleteProjects();
-
-document.querySelectorAll(".todoDetails").forEach((item) => {
-  item.addEventListener("click", (e) => {
-    var popup = document.getElementById("pop-up");
-    popup.classList.toggle("show");
-  });
-});
 export { container, TodoList, projectArray };
