@@ -69,9 +69,7 @@ body {
 .todoTitle {
   grid-column: 2/4;
 }
-.todoDetails {
-  grid-column: 6/7;
-}
+
 .todoDate {
   grid-column: 8/9;
 }
@@ -205,4 +203,44 @@ body {
 .projectDelete {
   grid-column: 5/8;
   grid-row: 8/9;
+}
+
+.todoDetails {
+  grid-column: 6/7;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.todoDetails .toolTipText {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.todoDetails .toolTipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.todoDetails:hover .toolTipText {
+  visibility: visible;
+  opacity: 1;
 }
