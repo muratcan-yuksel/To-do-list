@@ -1,7 +1,3 @@
-import { Todo, newTodo } from './createTodo';
-import { container, TodoList, projectArray } from './index';
-import { addDivs } from './addDivs';
-
 // Gets the user input (value) and exports it
 const getInput = (() => {
   const getTitle = () => {
