@@ -16,6 +16,7 @@ const addDivs = () => {
 
   const date = document.createElement('DIV');
   const priority = document.createElement('DIV');
+  const editButton = document.createElement('BUTTON');
   const deleteButton = document.createElement('BUTTON');
   // set their attributes for identification and append them to the todo container Div
 
@@ -41,6 +42,11 @@ const addDivs = () => {
   priority.innerHTML = TodoList[TodoList.length - 1].priority;
   priority.setAttribute('class', 'todoPriority');
   todoContainer.appendChild(priority);
+
+  editButton.textContent = 'Edit';
+  editButton.setAttribute('class', 'myBtn');
+  editButton.setAttribute('id', 'todoEdit');
+  todoContainer.appendChild(editButton);
 
   deleteButton.textContent = 'DELETE';
   deleteButton.setAttribute('class', 'todoDelete');
