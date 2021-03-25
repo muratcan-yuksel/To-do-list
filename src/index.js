@@ -97,6 +97,8 @@ window.onload = swapProjects();
 window.onload = localDropDown();
 window.onload = displayHome();
 
+// setInterval(() => { console.log('Hello'); }, 300);
+
 // delete projects
 deleteProjects();
 export { container, TodoList, projectArray };
