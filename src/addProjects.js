@@ -27,6 +27,9 @@ const addProjects = (() => {
         projectArray[projectPush[i].textContent] = [];
       }
     }
+    localStorage.setItem('projectArray', JSON.stringify(projectArray));
+
+    console.log(projectArray);
   });
 })();
 
