@@ -2,7 +2,7 @@ import { getInput } from "./getInput";
 import { TodoList, projectArray } from "./index";
 import { deleteProjects } from "./deleteProjects";
 
-//Todo class
+// Todo class
 class Todo {
   constructor(title, date, priority, details, project) {
     this.title = title;
@@ -12,22 +12,22 @@ class Todo {
     this.project = project;
   }
 }
-//Creates a new todo upon function calling
+// Creates a new todo upon function calling
 const newTodo = (() => {
-  //create new todo
+  // create new todo
   const createTodo = () => {
     const todo = new Todo();
-    //todo takes its values from  the user input taken at createDOM
+    // todo takes its values from  the user input taken at createDOM
     todo.title = getInput.getTitle();
     todo.details = getInput.getDetails();
     todo.date = getInput.getDate();
     todo.priority = getInput.getPriority();
     todo.project = getInput.getDropDown();
-    //the following function does this:
-    //it loops through the projectArray object
-    //checks if the created todo shares its project name with any of the items in the object
-    //if that's the case, pushes the todo into THAT project array in the projectArray object
-    for (let project in projectArray) {
+    // the following function does this:
+    // it loops through the projectArray object
+    // checks if the created todo shares its project name with any of the items in the object
+    // if that's the case, pushes the todo into THAT project array in the projectArray object
+    for (const project in projectArray) {
       if (project === todo.project) {
         // console.log(projectArray[project]);
         projectArray[project].push(todo);
@@ -35,11 +35,9 @@ const newTodo = (() => {
         localStorage.setItem("projectArray", JSON.stringify(projectArray));
       }
     }
-    //push the new todo into the Todolist array from the index.js file
+    // push the new todo into the Todolist array from the index.js file
     TodoList.push(todo);
-    //save the todoList into local storage
-
-    return;
+    // save the todoList into local storage
   };
 
   return { createTodo };

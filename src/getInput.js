@@ -1,30 +1,24 @@
-import { Todo, newTodo } from "./createTodo";
-import { container, TodoList, projectArray } from "./index";
-import { addDivs } from "./addDivs";
+import { Todo, newTodo } from './createTodo';
+import { container, TodoList, projectArray } from './index';
+import { addDivs } from './addDivs';
 
-//Gets the user input (value) and exports it
+// Gets the user input (value) and exports it
 const getInput = (() => {
-  const getTitle = () => {
-    return document.getElementById("title").value;
-  };
+  const getTitle = () => document.getElementById('title').value;
   const getDetails = () => {
-    return document.getElementById("details").value;
+    const details = document.getElementById('details').value;
+    document.getElementById('details').value = '';
+    return details;
   };
 
-  const getDate = () => {
-    return document.getElementById("date").value;
-  };
+  const getDate = () => document.getElementById('date').value;
 
-  const getPriority = () => {
-    return document.querySelector('input[name="priority"]:checked').value;
-  };
-  //get the input from project
-  const getProjectInput = () => {
-    return document.getElementById("projectAdd").value;
-  };
-  //get the input from project drop down menu
+  const getPriority = () => document.querySelector('input[name="priority"]:checked').value;
+  // get the input from project
+  const getProjectInput = () => document.getElementById('projectAdd').value;
+  // get the input from project drop down menu
   const getDropDown = () => {
-    const input = document.getElementById("projectAddTodo");
+    const input = document.getElementById('projectAddTodo');
     return input.options[input.selectedIndex].text;
   };
 
