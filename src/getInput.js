@@ -19,7 +19,11 @@ const getInput = (() => {
 
   const getPriority = () => document.querySelector('input[name="priority"]:checked').value;
   // get the input from project
-  const getProjectInput = () => document.getElementById('projectAdd').value;
+  const getProjectInput = () => {
+    const project = document.getElementById('projectAdd').value;
+    document.getElementById('projectAdd').value = '';
+    return project;
+  };
   // get the input from project drop down menu
   const getDropDown = () => {
     const input = document.getElementById('projectAddTodo');
