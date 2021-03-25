@@ -4,7 +4,11 @@ import { addDivs } from './addDivs';
 
 // Gets the user input (value) and exports it
 const getInput = (() => {
-  const getTitle = () => document.getElementById('title').value;
+  const getTitle = () => {
+    const title = document.getElementById('title').value;
+    document.getElementById('title').value = '';
+    return title;
+  };
   const getDetails = () => {
     const details = document.getElementById('details').value;
     document.getElementById('details').value = '';
