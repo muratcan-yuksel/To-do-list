@@ -59,7 +59,7 @@ button {
   grid-row: 1/2;
   grid-column: 1/3;
 }
-#myBtn {
+.myBtn {
   grid-row: 10/12;
   grid-column: 2/3;
   background: none;
